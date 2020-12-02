@@ -11,3 +11,8 @@ Aplicación para poner en contacto compradores y vendedores que buscan u ofertan
 [Este diseño](https://xd.adobe.com/view/75a31cad-ef76-4d6a-766b-a50c920b7770-0392/grid) servirá como inspiración sobre los colores a utilizar.
 
 **IMPORTANTE** Los wireframes son una aproximación y no necesariamente la aplicación final.
+
+## Recursos
+- [Using Rails for API-only Applications
+](https://guides.rubyonrails.org/api_app.html)
+- [Grape](https://github.com/ruby-grape/grape)
