@@ -1,1 +1,30 @@
-<h1 class="text-blue-500">Hello, world!<h1>
+<div class="flex flex-col items-center px-10 md:px-32 lg:px-60 py-10 lg:py-14">
+  <h1 class="mb-7 text-primary">¡Hola!</h1>
+  <h5 class="mb-8">Te damos la bienvenida a</h5>
+  <%= image_tag("logo.png", class: "w-10/12 md:w-8/12 lg:w-6/12 mb-12") %>
+
+  <%= form_with url: "#", class: "pb-12 w-full" do |form| %>
+    <div class="flex flex-col items-center">
+      <%= form.label :link, "Escribe tu dirección en la barra para ubicar los negocios cercanos", class: "pb-4 text-center" %>
+      <%= form.text_field :link, class: "md:w-8/12 py-2 px-6 bg-blue-50 rounded-md font-light shadow", placeholder: "Escribe una dirección" %>
+    </div>
+  <% end %>
+  
+  <h3 class="mb-6 text-complementary">#QuédateEnCasa</h3>
+  <p class="text-center mb-3">
+    Tribo es una plataforma digital que te conecta con comercios y
+    vendedores cerca de ti y que pueden enviar a domicilio lo que necesitas de ellos.
+  </p>
+  <p class="md:w-6/12 text-center mb-8">
+    Sólo llama o envía un mensaje por WhatsApp
+    y recibe tu pedido en la puerta de tu hogar
+  </p>
+
+  <a href="" class="py-2 px-4 bg-primary hover:bg-white border-2 border-primary rounded-md text-white hover:text-primary font-semibold hover:shadow">Descarga la App</a>
+
+  <div class="mt-10 text-center">
+    <span class="mb-2 text-xs lg:text-base">Made with love in Colima, México</span>
+    <br>
+    <span class="text-complementary text-xs lg:text-base">#WeAreMagma</span>
+  </div>
+</div>
