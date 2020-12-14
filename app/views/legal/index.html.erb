@@ -1,0 +1,54 @@
+<ul>
+  <li><button id="modal-recommendations" class="btn">#QuedateEnCasa</button></li>
+  <li><button id="modal-terms" class="btn">Terms & Conditions</button></li>
+  <li><button id="modal-faq" class="btn">FAQ</button></li>
+  <li><button id="modal-policy" class="btn">Policy</button></li>
+</ul>
+
+<div id="modal-faq" class="modal-bg bg-transparent absolute transition-opacity duration-500 opacity-0 bg-gray-300 pt-16 fixed w-full h-full left-0 z-50 overflow-auto">
+  <div class="modal-content m-auto bg-white w-4/5 shadow-lg rounded-lg">
+    <div class="p-4">
+      <span id="modal-faq" class="modal-close float-left text-lg font-bold text-gray-500 hover:text-gray-300 no-underline cursor-pointer">&#10229;</span>
+      <%= sanitize t 'legal.faq.title' %>
+    </div>
+    <div class="text-justify p-4 text-gray-500 mx-8">
+      <%= sanitize t 'legal.faq.body' %>
+    </div>
+  </div>
+</div>
+
+<div id="modal-terms" class="modal-bg bg-transparent absolute transition-opacity duration-500 opacity-0 bg-gray-300 pt-16 fixed w-full h-full left-0 z-50 overflow-auto">
+  <div class="modal-content m-auto bg-white w-4/5 shadow-lg rounded-lg">
+    <div class="p-4">
+      <span id="modal-terms" class="modal-close float-left text-lg font-bold text-gray-500 hover:text-gray-300 no-underline cursor-pointer">&#10229;</span>
+      <%= sanitize t 'legal.terms.title' %>
+    </div>
+    <div class="text-justify p-4 text-gray-500 mx-8">
+      <%= sanitize t 'legal.terms.body' %>
+    </div>
+  </div>
+</div>
+
+<div id="modal-recommendations" class="modal-bg bg-transparent absolute transition-opacity duration-500 opacity-0 bg-gray-300 pt-16 fixed w-full h-full left-0 z-50 overflow-auto">
+  <div class="modal-content m-auto bg-white w-4/5 shadow-lg rounded-lg">
+    <div class="p-4">
+      <span id="modal-recommendations" class="modal-close float-left text-lg font-bold text-gray-500 hover:text-gray-300 no-underline cursor-pointer">&#10229;</span>
+      <%= sanitize t 'legal.recommendations.title' %>
+    </div>
+    <div class="text-justify p-4 text-gray-500 mx-8">
+    <%= sanitize t 'legal.recommendations.body' %>
+    </div>
+  </div>
+</div>
+
+<div id="modal-policy" class="modal-bg bg-transparent absolute transition-opacity duration-500 opacity-0 bg-gray-300 pt-16 fixed w-full h-full left-0 z-50 overflow-auto">
+  <div class="modal-content m-auto bg-white w-4/5 shadow-lg rounded-lg">
+    <div class="p-4">
+      <span id="modal-policy" class="modal-close float-left text-lg font-bold text-gray-500 hover:text-gray-300 no-underline cursor-pointer">&#10229;</span>
+      <%= sanitize t 'legal.policy.title' %>
+    </div>
+    <div class="text-justify p-4 text-gray-500 mx-8">
+    <%= sanitize t 'legal.policy.body' %>
+    </div>
+  </div>
+</div>
