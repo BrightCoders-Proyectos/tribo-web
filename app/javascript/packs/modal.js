@@ -4,12 +4,12 @@ document.addEventListener('turbolinks:load', function(){
   
   function openModal(event) {
     var modal = document.querySelector("div[id="+event.currentTarget.id+"]");
-    modal.classList.add('opacity-100', 'z-50');
+    modal.classList.remove('hidden');
   }
 
   function closeModal(event) {
     var modal = document.querySelector("div[id="+event.currentTarget.id+"]");
-    modal.classList.remove('opacity-100', 'z-50');
+    modal.classList.add('hidden');
   }
 
   buttons.forEach(function (b){
@@ -27,7 +27,7 @@ window.onclick = function(event) {
   var modal = document.querySelectorAll(".modal-bg");
   modal.forEach(function(m){
     if(event.target === m){
-      m.classList.remove('opacity-100', 'z-50');
+      m.classList.add('hidden');
     }
   });
 }
