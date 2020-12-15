@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   
+  resources :market_places
   root 'main#index'
   # get 'main/dashboard'
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
