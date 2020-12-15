@@ -4,8 +4,13 @@
 </div>
 
 <div class="text-field">
-  <%= form.label :username %>
-  <%= form.text_field :username %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="text-field">
+  <%= form.label :phone %>
+  <%= form.text_field :phone, :maxlength => 10 %>
 </div>
 
 <div class="password-field">
