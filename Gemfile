@@ -21,14 +21,12 @@ gem "jbuilder", "~> 2.7"
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-<<<<<<< HEAD
-=======
+
 # Use Asset Pipeline Sprockets
 gem 'sprockets-rails'
 # Sass Compilation for Sprockets
 gem 'sass-rails'
 
->>>>>>> 61615fc8c278ad14ff48076434a3743d584e5dfa
 gem "clearance"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
