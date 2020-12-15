@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_000118) do
+ActiveRecord::Schema.define(version: 2020_12_15_010551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "market_places", force: :cascade do |t|
+    t.string "business_name"
+    t.string "address"
+    t.string "district"
+    t.integer "postcode"
+    t.text "business_line"
+    t.string "pickup_type"
+    t.time "open_hour"
+    t.time "close_hour"
+    t.string "service_days"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false

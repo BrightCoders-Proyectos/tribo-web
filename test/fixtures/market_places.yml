@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_name: MyString
+  address: MyString
+  district: MyString
+  postcode: 1
+  business_line: MyText
+  pickup_type: MyString
+  open_hour: 2020-12-14 19:05:51
+  close_hour: 2020-12-14 19:05:51
+  service_days: MyString
+
+two:
+  business_name: MyString
+  address: MyString
+  district: MyString
+  postcode: 1
+  business_line: MyText
+  pickup_type: MyString
+  open_hour: 2020-12-14 19:05:51
+  close_hour: 2020-12-14 19:05:51
+  service_days: MyString

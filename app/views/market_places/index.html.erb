@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Market Places</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business name</th>
+      <th>Address</th>
+      <th>District</th>
+      <th>Postcode</th>
+      <th>Business line</th>
+      <th>Pickup type</th>
+      <th>Open hour</th>
+      <th>Close hour</th>
+      <th>Service days</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @market_places.each do |market_place| %>
+      <tr>
+        <td><%= market_place.business_name %></td>
+        <td><%= market_place.address %></td>
+        <td><%= market_place.district %></td>
+        <td><%= market_place.postcode %></td>
+        <td><%= market_place.business_line %></td>
+        <td><%= market_place.pickup_type %></td>
+        <td><%= market_place.open_hour %></td>
+        <td><%= market_place.close_hour %></td>
+        <td><%= market_place.service_days %></td>
+        <td><%= link_to 'Show', market_place %></td>
+        <td><%= link_to 'Edit', edit_market_place_path(market_place) %></td>
+        <td><%= link_to 'Destroy', market_place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Market Place', new_market_place_path %>
