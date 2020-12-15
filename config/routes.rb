@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   get "legal/index"
+  
   resources :market_places
   root 'main#index'
   # get 'main/dashboard'
