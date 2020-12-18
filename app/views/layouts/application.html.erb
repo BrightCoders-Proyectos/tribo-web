@@ -7,8 +7,8 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :head %>
   </head>
-
   <body>
    <% if signed_in? %>
       Signed in as: <%= current_user.email %>
@@ -17,11 +17,11 @@
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
     <%= yield %>
+    <%= javascript_pack_tag 'modal' %>
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
     </div>
-
   </body>
 </html>

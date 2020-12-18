@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "legal/index"
   
   resources :market_places
   root 'main#index'
