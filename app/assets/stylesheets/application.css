@@ -18,6 +18,7 @@
  @import "tailwindcss/components";
  @import "tailwindcss/utilities";
 
+
 h1 {
   @apply text-4xl md:text-5xl xl:text-6xl;
 }
