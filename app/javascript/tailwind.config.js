@@ -9,14 +9,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#FF8400'
+        scene: {
+          DEFAULT: '#F6F8FF',
+          dark: '#262728',
+          neutral: '#9CA3AF',
+          input: '#E1F1F5'
         },
-        secondary: {
-          DEFAULT: '#12A5ED'
+        tribo: {
+          DEFAULT: '#037D94',
+          secondary: '#FFCF87'
         },
-        complementary: {
-          DEFAULT: '#7ED321'
+        extra: {
+          primary: '#29335C',
+          secondary: '#EFD13B'
+        },
+        alert: {
+          success: '#047857',
+          fail: '#B91C1C',
+          disabled: '#D1D5DB'
         }
       },
       fontFamily: {
