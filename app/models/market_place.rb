@@ -1,2 +1,0 @@
-class MarketPlace < ApplicationRecord
-end
