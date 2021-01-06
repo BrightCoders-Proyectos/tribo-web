@@ -1,10 +1,11 @@
 <% content_for :head do %>
+  <%= javascript_pack_tag 'ham_menu' %>
   <%= javascript_pack_tag 'modal' %>
   <%= javascript_pack_tag 'sidebar' %>
   <%= javascript_pack_tag 'modal_info' %>
 <% end %>
 
-<button id="menu">☰</button>
+<%= render "shared/header" %>
 
 <!-- Modal Right -->
   <div class="flex items-center justify-center h-64">
