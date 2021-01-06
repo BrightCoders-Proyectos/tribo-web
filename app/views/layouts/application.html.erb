@@ -5,9 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- Tailwind-->
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Tailwind -->
+    
     <%= yield :head %>
+    
   </head>
   <body>
    <% if signed_in? %>
@@ -16,6 +26,7 @@
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
+
     <%= yield %>
     <%= javascript_pack_tag 'modal' %>
     <div id="flash">
