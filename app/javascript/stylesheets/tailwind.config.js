@@ -29,9 +29,7 @@ module.exports = {
           disabled: '#D1D5DB'
         }
       },
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
+      fontFamily: false,
     },
   }
 }
