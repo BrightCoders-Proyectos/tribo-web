@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get "legal/index"
   
   resources :market_places
-  root 'main#index'
-  # get 'main/dashboard'
+  get 'main/dashboard'
+  
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
