@@ -3,27 +3,41 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-  /* Font Sizing */
+  /* Font Sizing and weight */
   body {
     @apply text-lg md:text-xl xl:text-2xl;
   }
+  
   h1 {
-    @apply text-6xl md:text-7xl 2xl:text-8xl !important;
+    @apply text-6xl md:text-7xl 2xl:text-8xl font-bold !important;
   }
   h2 {
-    @apply text-4xl md:text-5xl 2xl:text-6xl !important;
+    @apply text-4xl md:text-5xl 2xl:text-6xl font-medium !important;
   }
   h3, h4 {
-    @apply text-3xl md:text-4xl 2xl:text-5xl !important;
+    @apply text-3xl md:text-4xl 2xl:text-5xl font-bold !important;
   }
   h5, h6 {
     @apply text-2xl md:text-3xl 2xl:text-4xl !important;
+  }
+
+  input, input::placeholder{
+    @apply font-light;
+  }
+  input::placeholder{
+    @apply opacity-75;
+  }
+}
+
+@layer components{
+  .button {
+    @apply font-medium;
   }
 }
 
 @layer utilities {
   /* Font Styling */
   .small {
-    @apply text-xs md:text-sm;
+    @apply text-xs md:text-sm font-light;
   }
 }
