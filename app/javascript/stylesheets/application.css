@@ -46,6 +46,15 @@
   .btn-neutral{
     @apply bg-scene-neutral border-scene-neutral hover:bg-scene hover:text-scene-neutral;
   }
+
+  /* All input field styles but fail state */
+  .input-field {
+    @apply py-1 px-3 md:px-4 xl:px-5 flex flex-row items-center bg-scene-input border border-scene-input rounded-full active:shadow;
+  }
+  /* Input field styles for fail state */
+  .input-field-fail {
+    @apply border-alert-fail text-alert-fail;
+  }
 }
 
 @layer utilities {
