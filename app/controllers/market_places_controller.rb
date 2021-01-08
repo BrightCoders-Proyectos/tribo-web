@@ -1,12 +1,23 @@
 class MarketPlacesController < ApplicationController
-  before_action :require_login, except: %i[index, show]
+  before_action :require_login, except: [:index]
   before_action :set_market_place, only: [:show, :edit, :update, :destroy]
 
   # GET /market_places
   # GET /market_places.json
   def index
-    current_user.market_places
-    @market_places = MarketPlace.all
+    @market_places = case params[:business_line]
+    when 'Products'
+      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    # A was pressed
+    when 'Services'
+      # B was pressed
+      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    when 'Food'
+      # C was pressed
+      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    else
+      MarketPlace.all
+    end
   end
 
   # GET /market_places/1

@@ -2,6 +2,15 @@
 
 <h1>Market Places</h1>
 
+<%= form_tag market_places_path, method: :get do %>
+
+  <%= submit_tag 'Products', name: 'business_line', class: 'submit products' %>
+  <%= submit_tag 'Services', name: 'business_line', class: 'submit services' %>
+  <%= submit_tag 'Food', name: 'business_line', class: 'submit food' %>
+  <%= submit_tag 'All', name: 'business_line', class: 'submit all' %>
+
+<% end %>
+
 <table>
   <thead>
     <tr>
