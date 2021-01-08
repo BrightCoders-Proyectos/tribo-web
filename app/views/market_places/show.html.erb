@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @market_place.business_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @market_place.address %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @market_place.district %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @market_place.postcode %>
+</p>
+
+<p>
+  <strong>Business line:</strong>
+  <%= @market_place.business_line %>
+</p>
+
+<p>
+  <strong>Pickup type:</strong>
+  <%= @market_place.pickup_type %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @market_place.latitud %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @market_place.longitud %>
+</p>
+
+<p>
+  <strong>Open hour:</strong>
+  <%= @market_place.open_hour %>
+</p>
+
+<p>
+  <strong>Close hour:</strong>
+  <%= @market_place.close_hour %>
+</p>
+
+<p>
+  <strong>Service days:</strong>
+  <%= @market_place.service_days %>
+</p>
+
+<%= link_to 'Edit', edit_market_place_path(@market_place) %> |
+<%= link_to 'Back', market_places_path %>
