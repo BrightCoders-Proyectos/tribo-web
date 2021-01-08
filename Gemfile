@@ -26,6 +26,7 @@ gem 'sprockets-rails'
 # Sass Compilation for Sprockets
 gem 'sass-rails'
 
+gem "clearance"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

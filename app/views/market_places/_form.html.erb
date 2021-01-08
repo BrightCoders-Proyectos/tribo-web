@@ -1,0 +1,76 @@
+<%= form_with(model: market_place, local: true) do |form| %>
+  <% if market_place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(market_place.errors.count, "error") %> prohibited this market_place from being saved:</h2>
+
+      <ul>
+        <% market_place.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_name %>
+    <%= form.text_field :business_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.number_field :postcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_line %>
+    <%= form.text_field :business_line %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pickup_type %>
+    <%= form.text_field :pickup_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitud %>
+    <%= form.text_field :latitud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitud %>
+    <%= form.text_field :longitud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :open_hour %>
+    <%= form.time_select :open_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :close_hour %>
+    <%= form.time_select :close_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_days %>
+    <%= form.text_field :service_days %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

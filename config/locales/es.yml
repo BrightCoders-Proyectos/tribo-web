@@ -1,4 +1,11 @@
 es:
+  activerecord: 
+    errors:
+      models:
+        market_places:
+          attributes:
+            user:
+              required: "Se requiere el usuario"
   hello: "Hola"
   legal:
     faq:
