@@ -55,6 +55,11 @@
   .input-field-fail {
     @apply border-alert-fail text-alert-fail;
   }
+
+  /* Main modal styles */
+  .modal {
+    @apply w-full p-4 md:p-8 xl:p-12 flex flex-col bg-scene rounded-2xl shadow-lg;
+  }
 }
 
 @layer utilities {
