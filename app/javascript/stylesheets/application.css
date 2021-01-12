@@ -51,7 +51,7 @@
   .input-field {
     @apply py-1 px-3 md:px-4 xl:px-5 flex flex-row items-center bg-scene-input border border-scene-input rounded-full active:shadow;
   }
-  /* Input field styles for fail state */
+  /* Fail state */
   .input-field-fail {
     @apply border-alert-fail text-alert-fail;
   }
@@ -59,6 +59,15 @@
   /* Main modal styles */
   .modal {
     @apply w-full p-4 md:p-8 xl:p-12 flex flex-col bg-scene rounded-2xl shadow-lg;
+  }
+  
+  /* SideBar Container Styles */
+  .sidebar {
+    @apply h-screen w-3/4 md:w-1/2 xl:w-min py-6 pr-6 flex flex-col bg-tribo rounded-tr-3xl xl:rounded-r-3xl;
+  }
+  /* SideBar Item Styes */
+  .sidebar-item {
+    @apply py-1.5 xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 flex items-center bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
   }
 }
 
