@@ -1,15 +1,32 @@
 document.addEventListener('turbolinks:load', function(){
-  var close = document.querySelector('.info-close');
-  close.addEventListener('click', toggleModal);
+  var close = document.querySelectorAll('.info-close');
+  const button = document.querySelectorAll('.modal-button');
+  const overlay = document.querySelectorAll('.modal-overlay');
 
-  const button = document.querySelector('.modal-button');
-  button.addEventListener('click', toggleModal);
+  function openModal(event){
+    var name = event.currentTarget.name;
+    toggleModal(name);
+  }
+
+  function closeModal(event){
+    var id = event.currentTarget.parentNode.id;
+    toggleModal(id);
+  }
+
+  button.forEach(function(b){
+    b.addEventListener('click', openModal);
+  });
   
-  const overlay = document.querySelector('.modal-overlay');
-  overlay.addEventListener('click', toggleModal);
+  overlay.forEach(function(o){
+    o.addEventListener('click', closeModal);
+  });
+
+  close.forEach(function(o){
+    o.addEventListener('click', closeModal);
+  });
   
-  function toggleModal () {
-    const modal = document.querySelector('.modal');
+  function toggleModal(id) {
+    const modal = document.getElementById(id);
     modal.classList.toggle('opacity-0');
     modal.classList.toggle('pointer-events-none');
   }

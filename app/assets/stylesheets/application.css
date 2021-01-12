@@ -34,27 +34,3 @@ h5, h6 {
 p, a, input {
   @apply text-sm md:text-base xl:text-lg;
 }
-
-/*
-.submit {
-  @apply bg-transparent bg-cover inline-block h-24 text-base py-4 px-8 text-white no-underline font-bold;
-}
-
-.products { 
-  background-image: url( 
-'https://www.flaticon.es/svg/static/icons/svg/1524/1524711.svg'); 
-}
-.services { 
-  background-image: url( 
-'https://www.flaticon.es/svg/static/icons/svg/1514/1514552.svg'); 
-} 
-.food { 
-  background-image: url( 
-'https://www.flaticon.es/svg/static/icons/svg/857/857755.svg'); 
-} 
-
-.all { 
-  background-image: url( 
-'https://www.flaticon.es/svg/static/icons/svg/684/684850.svg'); 
-}
-*/
