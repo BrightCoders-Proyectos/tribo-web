@@ -10,6 +10,10 @@ module.exports = {
   plugins: [],
   theme: {
     extend: {
+      maxWidth: {
+        '1xs': '16rem',
+        '2xs': '12rem',
+      },
       colors: {
         scene: {
           DEFAULT: '#F6F8FF',

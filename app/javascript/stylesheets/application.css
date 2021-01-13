@@ -65,6 +65,10 @@
   .sidebar {
     @apply h-screen w-3/4 md:w-1/2 xl:w-min py-6 pr-6 flex flex-col bg-tribo rounded-tr-3xl xl:rounded-r-3xl;
   }
+  /* Logo Resizing */
+  .sidebar-logo {
+    @apply max-w-2xs md:max-w-1xs xl:max-w-xs ml-6 md:ml-2;
+  }
   /* SideBar Item Styes */
   .sidebar-item {
     @apply py-1.5 xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 flex items-center bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
