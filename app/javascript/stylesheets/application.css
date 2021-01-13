@@ -73,11 +73,31 @@
   .sidebar-item {
     @apply py-1.5 xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 flex items-center bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
   }
+
+  /* NavBar Container Styles */
+  .navbar {
+    @apply w-screen py-2 md:py-4 px-4 md:px-8 xl:px-12 flex items-center bg-scene shadow-lg;
+  }
+  /* Font Sizing for Hamburguer Icon */
+  .navbar-hamburguer{
+    @apply text-2xl xl:text-4xl;
+  }
+  /* Logo Behaviour and Resizing */
+  .navbar-logo {
+    @apply hidden xl:block xl:max-w-3xs 2xl:max-w-2xs;
+  }
 }
 
 @layer utilities {
   /* Font Styling */
   .small {
     @apply text-xs md:text-sm font-light;
+  }
+  /* Margins used between elements of NavBar */
+  .navbar-mr {
+    @apply mr-6 md:mr-12;
+  }
+  .navbar-mr-input {
+    @apply mr-0 xl:mr-12;
   }
 }

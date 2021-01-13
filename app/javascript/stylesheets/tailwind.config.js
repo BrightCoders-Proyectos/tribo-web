@@ -13,6 +13,7 @@ module.exports = {
       maxWidth: {
         '1xs': '16rem',
         '2xs': '12rem',
+        '3xs': '8rem',
       },
       colors: {
         scene: {
