@@ -5,7 +5,10 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   variants: {
-    boxShadow: ['active'],
+    extend: {
+      boxShadow: ['active'],
+      opacity: ['active']
+    }
   },
   plugins: [],
   theme: {

@@ -86,6 +86,19 @@
   .navbar-logo {
     @apply hidden xl:block xl:max-w-3xs 2xl:max-w-2xs;
   }
+
+  /* Select Menu Container Styles */
+  .selectmenu {
+    @apply mb-8 md:mb-16 xl:mb-0 mx-auto py-3 md:py-4 px-8 md:px-12 xl:px-16 flex items-center bg-scene shadow-lg rounded-full xl:rounded-t-3xl;
+  }
+  /* Container for Icon and Label */
+  .selectmenu-option {
+    @apply flex flex-col items-center opacity-50 hover:opacity-100 active:opacity-100;
+  }
+  /* Icon Resizing */
+  .selectmenu-option-icon {
+    @apply mb-4 text-2xl md:text-3xl xl:text-5xl;
+  }
 }
 
 @layer utilities {
@@ -99,5 +112,9 @@
   }
   .navbar-mr-input {
     @apply mr-0 xl:mr-12;
+  }
+  /* Margins used between elements of Select Menu */
+  .selectmenu-mr {
+    @apply mr-6 md:mr-8 xl:mr-12;
   }
 }
