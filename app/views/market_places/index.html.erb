@@ -16,8 +16,8 @@
 
 
 <!-- Mi cuenta -->
-<div id="modal-register" class="modal-bg bg-transparent absolute transition-opacity duration-500 hidden pt-10 fixed w-full h-full top-0 left-0 z-50 overflow-auto">
-  <div class="modal-content m-auto bg-primary w-2/6 h-screen shadow-lg rounded-lg">
+<div id="modal-register" class="flex flex-wrap modal-bg bg-transparent absolute transition-opacity duration-500 hidden pt-10 fixed w-full h-full top-0 left-0 z-50 overflow-auto">
+  <div class="flex-col modal-content m-auto bg-primary w-2/6 shadow-lg rounded-lg ">
     <div class="p-4">
       <span id="modal-register" class="modal-close float-right hover:text-gray-300 no-underline cursor-pointer">
         <div class="mr-2 ml-auto mt-2 fill-current w-6 h-6 cursor-pointer">
@@ -28,56 +28,76 @@
     <div class="text-justify ml-6 font-bold text-2xl text-black">
       Mi cuenta
     </div>
+
     <% @market_places.each do |market_place| %>
-    <div class="grid grid-cols-2 mt-2.5">
-      <div clas="col-start-1 col-end-2">
-        <h2 class="text-xl font-bold ml-6">Nombre</h2>
-        <p class="text-sm ml-6"><%= User.find(market_place.user_id).name %></p>
-      </div>
-      <div clas="col-start-2 col-end-3">
-        <h2 class="text-xl font-bold ml-6">Telefono</h2>
-        <p class="text-sm ml-6"><%= User.find(market_place.user_id).phone %></p>
-      </div>
-    </div>
-    <div class="text-justify py-4 mt-2.5 ml-6 font-bold text-2xl text-black">
-      Mis negocios
-    </div>
-    <hr>
-      <div class="grid grid-cols-1">
-        <h2 class="text-xl font-bold ml-6  mt-2.5">Nombre</h2>
-        <p class="text-sm ml-6"><%= market_place.business_name %></p>
-      </div>
-      <div clas="grid grid-cols-1">
-        <h2 class="text-xl font-bold ml-6  mt-2.5">Direccion</h2>
-        <p class="text-sm ml-6"><%= market_place.address %></p>
-      </div>
-      <div class="grid grid-cols-2 grid-rows-3">
-        <div>
-          <h2 class="text-xl font-bold ml-6  mt-2.5">Vendiendo</h2>
-          <p class="text-sm ml-6"><%= market_place.business_line %></p>
+      <% if current_user.email == User.find(market_place.user_id).email %>
+        <div class="grid grid-cols-2 mt-2.5">
+          <div clas="col-start-1 col-end-2">
+            <h2 class="text-xl font-bold ml-6">Nombre</h2>
+            <p class="text-sm ml-6"><%= User.find(market_place.user_id).name %></p>
+          </div>
+          <div clas="col-start-2 col-end-3">
+            <h2 class="text-xl font-bold ml-6">Telefono</h2>
+            <p class="text-sm ml-6"><%= User.find(market_place.user_id).phone %></p>
+          </div>
         </div>
-        <div>
-          <h2 class="text-xl font-bold ml-6  mt-2.5">Tipos de entrega</h2>
-          <p class="text-sm ml-6"><%= market_place.pickup_type %></p>
+        <div class="text-justify py-4 mt-2.5 ml-6 font-bold text-2xl text-black">
+          Mis negocios
         </div>
-        <div>
-          <h2 class="text-xl font-bold ml-6  mt-2.5">Servicio a domicilio</h2>
-          <p class="text-sm ml-6"><%= market_place.service_days %></p>
+        <hr>
+        <%break%>
+      <%end%>
+    <%end%>
+
+      <!-- ------------------------ Market places ------------------------------ -->
+    <% @market_places.each do |market_place| %>
+      <% if current_user.email == User.find(market_place.user_id).email %>
+        <div class="grid grid-cols-1">
+          <h2 class="text-xl font-bold ml-6  mt-2.5">Nombre</h2>
+          <p class="text-sm ml-6"><%= market_place.business_name %></p>
         </div>
-        <div>
-          <h2 class="text-xl font-bold ml-6  mt-2.5">Horario</h2>
-          <p class="text-sm ml-6"><%= market_place.open_hour.strftime('%H:%M') %> a <%= market_place.close_hour.strftime('%H:%M') %></p>
+
+        <div clas="grid grid-cols-1">
+          <h2 class="text-xl font-bold ml-6  mt-2.5">Direccion</h2>
+          <p class="text-sm ml-6"><%= market_place.address %></p>
         </div>
-        <div>
-          <button class="bg-secondary hover:bg-gray-700 text-white font-bold py-0.5 px-14 rounded-full ml-6 mt-3 shadow-md">Eliminar</button>
-        </div>
-        <div>
-          <button class="bg-btn-editar hover:bg-yellow-300 text-white font-bold py-0.5 px-16 ml-6 mt-3 rounded-full shadow-md">Editar</button>
-        </div>
-      </div>
+
+        <div class="grid grid-cols-2 grid-rows-3">
+          <div>
+            <h2 class="text-xl font-bold ml-6  mt-2.5">Vendiendo</h2>
+            <p class="text-sm ml-6"><%= market_place.business_line %></p>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold ml-6  mt-2.5">Tipos de entrega</h2>
+            <p class="text-sm ml-6"><%= market_place.pickup_type %></p>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold ml-6  mt-2.5">Servicio a domicilio</h2>
+            <p class="text-sm ml-6"><%= market_place.service_days %></p>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold ml-6  mt-2.5">Horario</h2>
+            <p class="text-sm ml-6"><%= market_place.open_hour.strftime('%H:%M') %> a <%= market_place.close_hour.strftime('%H:%M') %></p>
+          </div>
+
+          <div>
+            <button class="bg-secondary hover:bg-gray-700 text-white font-bold py-0.5 px-14 rounded-full ml-6 mt-3 shadow-md">Eliminar</button>
+          </div>
+
+          <div>
+            <button class="bg-btn-editar hover:bg-yellow-300 text-white font-bold py-0.5 px-16 ml-6 mt-3 rounded-full shadow-md">Editar</button>
+          </div>
+
+        </div> <!-- End Grid Mis negocios-->
+      <%end%>
+    <%end%>
+        <!-- ---------------------   End Market Places --------------------------- -->
       <hr>
     </div>
-    <%end%>
+
   </div>
 </div>
 <!-- Mi cuenta -->
