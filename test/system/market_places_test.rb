@@ -19,6 +19,8 @@ class MarketPlacesTest < ApplicationSystemTestCase
     fill_in "Business name", with: @market_place.business_name
     fill_in "Close hour", with: @market_place.close_hour
     fill_in "District", with: @market_place.district
+    fill_in "Latitud", with: @market_place.latitud
+    fill_in "Longitud", with: @market_place.longitud
     fill_in "Open hour", with: @market_place.open_hour
     fill_in "Pickup type", with: @market_place.pickup_type
     fill_in "Postcode", with: @market_place.postcode
@@ -38,6 +40,8 @@ class MarketPlacesTest < ApplicationSystemTestCase
     fill_in "Business name", with: @market_place.business_name
     fill_in "Close hour", with: @market_place.close_hour
     fill_in "District", with: @market_place.district
+    fill_in "Latitud", with: @market_place.latitud
+    fill_in "Longitud", with: @market_place.longitud
     fill_in "Open hour", with: @market_place.open_hour
     fill_in "Pickup type", with: @market_place.pickup_type
     fill_in "Postcode", with: @market_place.postcode

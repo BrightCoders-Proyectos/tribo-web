@@ -17,7 +17,7 @@ class MarketPlacesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create market_place" do
     assert_difference('MarketPlace.count') do
-      post market_places_url, params: { market_place: { address: @market_place.address, business_line: @market_place.business_line, business_name: @market_place.business_name, close_hour: @market_place.close_hour, district: @market_place.district, open_hour: @market_place.open_hour, pickup_type: @market_place.pickup_type, postcode: @market_place.postcode, service_days: @market_place.service_days } }
+      post market_places_url, params: { market_place: { address: @market_place.address, business_line: @market_place.business_line, business_name: @market_place.business_name, close_hour: @market_place.close_hour, district: @market_place.district, latitud: @market_place.latitud, longitud: @market_place.longitud, open_hour: @market_place.open_hour, pickup_type: @market_place.pickup_type, postcode: @market_place.postcode, service_days: @market_place.service_days } }
     end
 
     assert_redirected_to market_place_url(MarketPlace.last)
@@ -34,7 +34,7 @@ class MarketPlacesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update market_place" do
-    patch market_place_url(@market_place), params: { market_place: { address: @market_place.address, business_line: @market_place.business_line, business_name: @market_place.business_name, close_hour: @market_place.close_hour, district: @market_place.district, open_hour: @market_place.open_hour, pickup_type: @market_place.pickup_type, postcode: @market_place.postcode, service_days: @market_place.service_days } }
+    patch market_place_url(@market_place), params: { market_place: { address: @market_place.address, business_line: @market_place.business_line, business_name: @market_place.business_name, close_hour: @market_place.close_hour, district: @market_place.district, latitud: @market_place.latitud, longitud: @market_place.longitud, open_hour: @market_place.open_hour, pickup_type: @market_place.pickup_type, postcode: @market_place.postcode, service_days: @market_place.service_days } }
     assert_redirected_to market_place_url(@market_place)
   end
 

@@ -1,10 +1,23 @@
 class MarketPlacesController < ApplicationController
+  before_action :require_login, except: [:index]
   before_action :set_market_place, only: [:show, :edit, :update, :destroy]
 
   # GET /market_places
   # GET /market_places.json
   def index
-    @market_places = MarketPlace.all
+    @market_places = case params[:business_line]
+    when 'Products'
+      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    # A was pressed
+    when 'Services'
+      # B was pressed
+      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    when 'Food'
+      # C was pressed
+      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    else
+      MarketPlace.all
+    end
   end
 
   # GET /market_places/1
@@ -69,6 +82,6 @@ class MarketPlacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def market_place_params
-      params.require(:market_place).permit(:business_name, :address, :district, :postcode, :business_line, :pickup_type, :open_hour, :close_hour, :service_days)
+      params.require(:market_place).permit(:user_id, :business_name, :address, :district, :postcode, :business_line, :pickup_type, :latitud, :longitud, :open_hour, :close_hour, :service_days)
     end
 end

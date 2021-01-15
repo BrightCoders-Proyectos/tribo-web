@@ -7,8 +7,10 @@ one:
   postcode: 1
   business_line: MyText
   pickup_type: MyString
-  open_hour: 2020-12-14 19:05:51
-  close_hour: 2020-12-14 19:05:51
+  latitud: 1.5
+  longitud: 1.5
+  open_hour: 2021-01-07 17:00:45
+  close_hour: 2021-01-07 17:00:45
   service_days: MyString
 
 two:
@@ -18,6 +20,8 @@ two:
   postcode: 1
   business_line: MyText
   pickup_type: MyString
-  open_hour: 2020-12-14 19:05:51
-  close_hour: 2020-12-14 19:05:51
+  latitud: 1.5
+  longitud: 1.5
+  open_hour: 2021-01-07 17:00:45
+  close_hour: 2021-01-07 17:00:45
   service_days: MyString

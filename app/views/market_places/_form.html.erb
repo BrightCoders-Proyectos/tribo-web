@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="form-group">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
   <div class="field">
     <%= form.label :business_name %>
     <%= form.text_field :business_name %>
@@ -33,12 +37,22 @@
 
   <div class="field">
     <%= form.label :business_line %>
-    <%= form.text_area :business_line %>
+    <%= form.text_field :business_line %>
   </div>
 
   <div class="field">
     <%= form.label :pickup_type %>
     <%= form.text_field :pickup_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitud %>
+    <%= form.text_field :latitud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitud %>
+    <%= form.text_field :longitud %>
   </div>
 
   <div class="field">
