@@ -17,7 +17,7 @@
 
 <!-- Mi cuenta -->
 <div id="modal-register" class="flex flex-wrap modal-bg bg-transparent absolute transition-opacity duration-500 hidden pt-10 fixed w-full h-full top-0 left-0 z-50 overflow-auto">
-  <div class="flex-col modal-content m-auto bg-primary w-2/6 shadow-lg rounded-lg ">
+  <div class="flex-col modal-content m-auto bg-primary w-2/6 shadow-lg rounded-lg">
     <div class="p-4">
       <span id="modal-register" class="modal-close float-right hover:text-gray-300 no-underline cursor-pointer">
         <div class="mr-2 ml-auto mt-2 fill-current w-6 h-6 cursor-pointer">
@@ -44,7 +44,7 @@
         <div class="text-justify py-4 mt-2.5 ml-6 font-bold text-2xl text-black">
           Mis negocios
         </div>
-        <hr>
+        <hr width="90%" class="ml-5">
         <%break%>
       <%end%>
     <%end%>
@@ -92,12 +92,23 @@
           </div>
 
         </div> <!-- End Grid Mis negocios-->
+        <hr width="90%" class="ml-5">
       <%end%>
     <%end%>
         <!-- ---------------------   End Market Places --------------------------- -->
-      <hr>
+    <div align="center">
+      <button class="bg-new-business hover:bg-blue-900 text-white font-bold py-0.5 px-24 rounded-full mt-3 shadow-md">Añadir nuevo negocio</button>
     </div>
 
+    <div align="center">
+      <button class="bg-secondary hover:bg-gray-700 text-white font-bold py-0.5 px-14 rounded-full ml-6 mt-3 shadow-md">Borrar cuenta</button>
+    </div>
+
+    <div align="center">
+      <button class="bg-btn-editar hover:bg-yellow-300 text-white font-bold py-0.5 px-16 ml-6 mt-3 rounded-full shadow-md">Editar info</button>
+    </div>
+
+    </div>
   </div>
 </div>
 <!-- Mi cuenta -->
