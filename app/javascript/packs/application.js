@@ -18,3 +18,12 @@ require("channels")
 
 import "tailwindcss/tailwind.css"
 import "../../assets/stylesheets/application.css"
+
+import "controllers"
+
+window.dispatchMapsEvent = function (...args) {
+  const event = document.createEvent("Events")
+  event.initEvent("google-maps-callback", true, true)
+  event.args = args
+  window.dispatchEvent(event)
+}
