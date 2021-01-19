@@ -4,10 +4,8 @@
   <%= javascript_pack_tag 'sidebar' %>
   <%= javascript_pack_tag 'modal_info' %>
 <% end %>
-<%= render "shared/header" %>
 <div data-controller="maps" data-action="google-maps-callback@window->maps#initializeMap">
-  <input class="col-span-3 w-border-2  bg-gray-100 h-10 px-9 w-11/12 pr-16 rounded-lg text-sm focus:outline-none
-          type="search" name="search" placeholder="Escribe tu dirección" data-maps-target="field" data-action="keydown->maps#preventSubmit" >
+  <%= render "shared/header" %>
   <div style="width: 100%; height: 88vh" data-maps-target="map">
   </div>
 </div>
