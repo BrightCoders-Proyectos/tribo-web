@@ -10,37 +10,20 @@ export default class extends Controller {
   }
 
   initializeMap() {
-    console.log(google)
     this.map()
-    //this.autocomplete()
-    //this.marker()
-    
+    console.log("1")
+    this.autocomplete()
+    console.log("2")
   }
 
   map() {
     if (this._map == undefined) {
       this._map = new google.maps.Map(this.mapTarget, {
         center: new google.maps.LatLng(39.5, -98.35),
-        zoom: 10
+        zoom: 6
       })
     }
     return this._map
-  }
-
-  marker() {
-    if (this._marker == undefined) {
-      this._marker = new google.maps.Marker({
-        map: this.map(),
-        anchorPoint: new google.maps.Point(0, 0)
-      })
-      let mapLocation = {
-        lat: parseFloat(this.latitudeTarget.value),
-        lng: parseFloat(this.longitudeTarget.value)
-      }
-      this._marker.setPosition(mapLocation)
-      this._marker.setVisible(true)
-    }
-    return this._marker
   }
 
   autocomplete() {
@@ -65,8 +48,6 @@ export default class extends Controller {
 
     this.map().fitBounds(place.geometry.viewport)
     this.map().setCenter(place.geometry.location)
-    this.marker().setPosition(place.geometry.location)
-    this.marker().setVisible(true)
 
     this.latitudeTarget.value = place.geometry.location.lat()
     this.longitudeTarget.value = place.geometry.location.lng()
