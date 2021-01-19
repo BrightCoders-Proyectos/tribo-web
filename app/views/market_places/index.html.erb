@@ -6,14 +6,10 @@
 <% end %>
 <%= render "shared/header" %>
 
-<div data-controller="maps" data-action="google-maps-callback@window->maps#initializeMap">
-  <div class="map" data-maps-target="map">
+<div class="map-container" data-controller="maps" data-action="google-maps-callback@window->maps#initializeMap">
+  <div style="width: 500px; height: 400px" class="map" data-maps-target="map">
   </div>
 </div>
-
-<% content_tag :div local: true, data: { controller: :maps, action: "google-maps-callback@window->maps#initializeMap" } do %>
-  <%= content_tag :div, nil, data: { target: "maps.map" }, class: 'map' %>
-<% end %>
 
 <nav id="sidebar" class="flex fixed w-full items-center justify-between px-6 h-16 bg-white text-gray-700 border-b border-gray-200 z-10 hidden">
   <div class="z-10 fixed inset-0 transition-opacity">

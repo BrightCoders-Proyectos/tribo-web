@@ -1,29 +1,27 @@
-import { Controller} from "stimulus"
+import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["field", "map"]
+  static targets = ["map", "field"]
 
   connect() {
-    if (typeof (google) != "undefined"){
+    if (typeof (google) != "undefined") {
       this.initializeMap()
     }
   }
 
   initializeMap() {
+    console.log(google)
     this.map()
-    this.marker()
-    this.autocomplete()
-    console.log('init')
+    //this.autocomplete()
+    //this.marker()
+    
   }
 
   map() {
-    if(this._map == undefined) {
+    if (this._map == undefined) {
       this._map = new google.maps.Map(this.mapTarget, {
-        center: new google.maps.LatLng(
-          this.latitudeTarget.value,
-          this.longitudeTarget.value
-        ),
-        zoom: 17
+        center: new google.maps.LatLng(39.5, -98.35),
+        zoom: 10
       })
     }
     return this._map
@@ -33,7 +31,7 @@ export default class extends Controller {
     if (this._marker == undefined) {
       this._marker = new google.maps.Marker({
         map: this.map(),
-        anchorPoint: new google.maps.Point(0,0)
+        anchorPoint: new google.maps.Point(0, 0)
       })
       let mapLocation = {
         lat: parseFloat(this.latitudeTarget.value),
