@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tribo</title>
+    <title>tribo</title>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <!-- Tailwind-->
+    <!-- Tailwind -->
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!-- Tailwind -->
     
+    <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <!-- Google Fonts -->
+
     <%= yield :head %>
     
   </head>
   <body>
     <% if signed_in? %>
       Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete, class: "button btn-prim" %>
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
