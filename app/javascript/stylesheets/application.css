@@ -1,0 +1,120 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  /* Font Sizing and weight */
+  body {
+    @apply text-lg md:text-xl xl:text-2xl;
+  }
+  
+  h1 {
+    @apply text-6xl md:text-7xl 2xl:text-8xl font-bold !important;
+  }
+  h2 {
+    @apply text-4xl md:text-5xl 2xl:text-6xl font-medium !important;
+  }
+  h3, h4 {
+    @apply text-3xl md:text-4xl 2xl:text-5xl font-bold !important;
+  }
+  h5, h6 {
+    @apply text-2xl md:text-3xl 2xl:text-4xl !important;
+  }
+
+  input, input::placeholder{
+    @apply font-light;
+  }
+  input::placeholder{
+    @apply opacity-75;
+  }
+}
+
+@layer components{
+  /* All button styles but colors and hovers */
+  .button {
+    @apply py-1 px-4 md:py-1.5 md:px-5 xl:px-6 flex flex-row justify-items-center items-center border-2 rounded-full shadow-md font-medium text-scene cursor-pointer;
+  }
+  /* Colors and hovers for primary button */
+  .btn-prim{
+    @apply bg-tribo border-tribo hover:bg-scene hover:text-tribo;
+  }
+  /* Colors and hovers for secondary button */
+  .btn-sec{
+    @apply bg-tribo-secondary border-tribo-secondary hover:bg-scene hover:text-tribo-secondary;
+  }
+  /* Colors and hovers for neutral button */
+  .btn-neutral{
+    @apply bg-scene-neutral border-scene-neutral hover:bg-scene hover:text-scene-neutral;
+  }
+
+  /* All input field styles but fail state */
+  .input-field {
+    @apply py-1 px-3 md:px-4 xl:px-5 flex flex-row items-center bg-scene-input border border-scene-input rounded-full active:shadow;
+  }
+  /* Fail state */
+  .input-field-fail {
+    @apply border-alert-fail text-alert-fail;
+  }
+
+  /* Main modal styles */
+  .modal {
+    @apply w-full p-4 md:p-8 xl:p-12 flex flex-col bg-scene rounded-2xl shadow-lg;
+  }
+  
+  /* SideBar Container Styles */
+  .sidebar {
+    @apply h-screen w-3/4 md:w-1/2 xl:w-min py-6 pr-6 flex flex-col bg-tribo rounded-tr-3xl xl:rounded-r-3xl;
+  }
+  /* Logo Resizing */
+  .sidebar-logo {
+    @apply max-w-2xs md:max-w-1xs xl:max-w-xs ml-6 md:ml-2;
+  }
+  /* SideBar Item Styes */
+  .sidebar-item {
+    @apply py-1.5 xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 flex items-center bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
+  }
+
+  /* NavBar Container Styles */
+  .navbar {
+    @apply w-screen py-2 md:py-4 px-4 md:px-8 xl:px-12 flex items-center bg-scene shadow-lg;
+  }
+  /* Font Sizing for Hamburguer Icon */
+  .navbar-hamburguer{
+    @apply text-2xl xl:text-4xl;
+  }
+  /* Logo Behaviour and Resizing */
+  .navbar-logo {
+    @apply hidden xl:block xl:max-w-3xs 2xl:max-w-2xs;
+  }
+
+  /* Select Menu Container Styles */
+  .selectmenu {
+    @apply mb-8 md:mb-16 xl:mb-0 mx-auto py-3 md:py-4 px-8 md:px-12 xl:px-16 flex items-center bg-scene shadow-lg rounded-full xl:rounded-t-3xl;
+  }
+  /* Container for Icon and Label */
+  .selectmenu-option {
+    @apply flex flex-col items-center opacity-50 hover:opacity-100 active:opacity-100;
+  }
+  /* Icon Resizing */
+  .selectmenu-option-icon {
+    @apply mb-4 text-2xl md:text-3xl xl:text-5xl;
+  }
+}
+
+@layer utilities {
+  /* Font Styling */
+  .small {
+    @apply text-xs md:text-sm font-light;
+  }
+  /* Margins used between elements of NavBar */
+  .navbar-mr {
+    @apply mr-6 md:mr-12;
+  }
+  .navbar-mr-input {
+    @apply mr-0 xl:mr-12;
+  }
+  /* Margins used between elements of Select Menu */
+  .selectmenu-mr {
+    @apply mr-6 md:mr-8 xl:mr-12;
+  }
+}
