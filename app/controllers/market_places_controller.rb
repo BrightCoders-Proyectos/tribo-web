@@ -82,6 +82,6 @@ class MarketPlacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def market_place_params
-      params.require(:market_place).permit(:user_id, :business_name, :address, :district, :postcode, :business_line, :pickup_type, :latitud, :longitud, :open_hour, :close_hour, :service_days)
+      params.require(:market_place).permit(:user_id, :business_name, :address, :district, :postcode, :business_line, :pickup_type, :latitud, :longitud, :open_hour, :close_hour, :service_days, :selling, :payment)
     end
 end
