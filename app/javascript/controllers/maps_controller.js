@@ -1,7 +1,9 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["map", "field"]
+  static targets = ["map", "field", "getCurrentLocation"]
+  static values = { latitud: Number,
+                    longitud: Number}
 
   connect() {
     if (typeof (google) != "undefined") {
@@ -11,19 +13,37 @@ export default class extends Controller {
 
   initializeMap() {
     this.map()
-    console.log("1")
+    this.marker()
     this.autocomplete()
-    console.log("2")
   }
 
   map() {
     if (this._map == undefined) {
       this._map = new google.maps.Map(this.mapTarget, {
-        center: new google.maps.LatLng(39.5, -98.35),
+        center: new google.maps.LatLng(
+          this.latitudValue,
+          this.longitudValue
+        ),
         zoom: 6
       })
     }
     return this._map
+  }
+
+  marker() {
+    if (this._marker == undefined) {
+      this._marker = new google.maps.Marker({
+        map: this.map(),
+        anchorPoint: new google.maps.Point(0, 0)
+      })
+      let mapLocation = {
+        lat: parseFloat(this.latitudValue),
+        lng: parseFloat(this.longitudValue)
+      }
+      this._marker.setPosition(mapLocation)
+      this._marker.setVisible(true)
+    }
+    return this._marker
   }
 
   autocomplete() {
@@ -48,12 +68,19 @@ export default class extends Controller {
 
     this.map().fitBounds(place.geometry.viewport)
     this.map().setCenter(place.geometry.location)
+    this.marker().setPosition(place.geometry.location)
+    this.marker().setVisible(true)
 
-    this.latitudeTarget.value = place.geometry.location.lat()
-    this.longitudeTarget.value = place.geometry.location.lng()
+    this.latitudValue = place.geometry.location.lat()
+    this.longitudValue = place.geometry.location.lng()
   }
 
   preventSubmit(e) {
     if (e.key == "Enter") { e.preventDefault() }
   }
+
+  getCurrentLocation() {
+    console.log("FUNCIONA!")
+  }
+
 }
