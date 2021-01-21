@@ -15,16 +15,27 @@
   h2 {
     @apply text-4xl md:text-5xl 2xl:text-6xl font-medium !important;
   }
+<<<<<<< HEAD
 
   h3,
   h4 {
     @apply text-3xl md:text-4xl 2xl:text-5xl font-bold !important;
+=======
+  h3, h4 {
+    @apply text-3xl md:text-4xl 2xl:text-5xl !important;
+>>>>>>> Weight fixed for headings
   }
 
   h5,
   h6 {
     @apply text-2xl md:text-3xl 2xl:text-4xl !important;
   }
+<<<<<<< HEAD
+=======
+  h3, h5 {
+    @apply font-bold !important;
+  }
+>>>>>>> ef838cf... Weight fixed for headings
 
   input,
   input::placeholder {
