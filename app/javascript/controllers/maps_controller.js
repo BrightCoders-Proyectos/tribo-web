@@ -82,5 +82,4 @@ export default class extends Controller {
   getCurrentLocation() {
     console.log("FUNCIONA!")
   }
-
 }
