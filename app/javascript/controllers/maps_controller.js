@@ -3,8 +3,8 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ["map", "field", "getCurrentLocation"]
   static values = {
-    latitude: Number,
-    longitude: Number,
+    latitud: Number,
+    longitud: Number,
   }
 
   connect() {
@@ -23,10 +23,10 @@ export default class extends Controller {
     if (this._map == undefined) {
       this._map = new google.maps.Map(this.mapTarget, {
         center: new google.maps.LatLng(
-          this.latitudValue,
-          this.longitudValue
+          19.265129,
+          -103.710844
         ),
-        zoom: 6
+        zoom: 16
       })
     }
     return this._map

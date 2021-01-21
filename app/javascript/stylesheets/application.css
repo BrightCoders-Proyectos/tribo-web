@@ -68,16 +68,28 @@
   }
   
   /* SideBar Container Styles */
+  .sidebar-full {
+    @apply flex fixed w-full px-6 h-16 z-10;
+  }
+  /* SideBar Content */
   .sidebar {
-    @apply h-screen w-3/4 md:w-1/2 xl:w-min py-6 pr-6 flex flex-col bg-tribo rounded-tr-3xl xl:rounded-r-3xl;
+    @apply transform top-0 left-0 w-3/4 md:w-1/2  lg:w-1/4 xl:w-1/4 bg-tribo text-white fixed h-full overflow-x-hidden overflow-y-auto ease-in-out transition-all duration-300 z-30 rounded-tr-3xl xl:rounded-r-3xl;
+  } 
+  /* SideBar, out of area */
+  .sidebar-outside {
+    @apply z-10 fixed inset-0 transition-opacity;
+  }
+  /* Icon close */
+  .sidebar-close {
+    @apply float-right font-bold no-underline cursor-pointer;
   }
   /* Logo Resizing */
   .sidebar-logo {
-    @apply max-w-2xs md:max-w-1xs xl:max-w-xs ml-6 md:ml-2;
+    @apply mt-6 pl-4 pr-16 pb-8 w-full max-w-2xs md:max-w-1xs xl:max-w-xs ml-6;
   }
   /* SideBar Item Styes */
   .sidebar-item {
-    @apply py-1.5 xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 flex items-center bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
+    @apply flex items-center w-11/12 py-1.5 mb-6 text-base xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
   }
 
   /* NavBar Container Styles */
