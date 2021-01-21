@@ -2,8 +2,10 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = ["map", "field", "getCurrentLocation"]
-  static values = { latitud: Number,
-                    longitud: Number}
+  static values = {
+    latitude: Number,
+    longitude: Number,
+  }
 
   connect() {
     if (typeof (google) != "undefined") {
