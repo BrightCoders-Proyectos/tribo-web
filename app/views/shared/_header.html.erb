@@ -1,22 +1,22 @@
 <nav>
   <div id ='nav' class="navbar">
-<!-- Menu hamburguesa-->
+    <!-- Menu hamburguesa-->
     <div class="navbar-hamburguer navbar-mr">
       <button id='menu'>
         <i class="fas fa-bars"></i>
       </button>
     </div>
-<!-- Menu hamburguesa-->
-
-<!-- Barra de busqueda-->
-    <input class="input-field flex-grow navbar-mr-input" type="sarch" name="search" placeholder="Escribe tu dirección">
-<!-- Barra de busqueda-->
-
- <!-- Logo -->
+    <!-- Menu hamburguesa-->
+    <!-- Barra de busqueda-->
+    <div class="search-bar">
+      <input class="input-field flex-grow navbar-mr-input" type="search" name="search" placeholder="Escribe tu dirección" data-maps-target="field" data-action="keydown->maps#preventSubmit" >
+      <button data-action="click->maps#getCurrentLocation">Ir a la ubicación actual</button>
+    </div>
+    <!-- Barra de busqueda-->
+    <!-- Logo -->
     <%= image_tag "tribo-logo-dark.svg", class: 'navbar-logo'%>
-<!-- Logo -->
+    <!-- Logo -->
   </div>
-
   <div id="menu" class="px-5 pt-2 pb-4 hidden">
   </div>
 </nav>
