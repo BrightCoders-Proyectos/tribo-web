@@ -13,6 +13,42 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "husky": "^4.3.6",
+    "lint-staged": ">=10",
+    "prettier": "^2.2.1",
+    "stylefmt": "^6.0.3",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "app/**/*.{js,es6,jsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ],
+    "app/**/*.{scss,css}": [
+      "stylefmt",
+      "stylelint --fix",
+      "git add"
+    ],
+    "{app,test}/**/*.rb": [
+      "bundle exec rubocop -a"
+    ]
   }
 }
