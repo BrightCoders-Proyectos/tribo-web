@@ -4,8 +4,8 @@ export default class extends Controller {
   static targets = ['map', 'field', 'getCurrentLocation'];
 
   static values = {
-    latitude: Number,
-    longitude: Number,
+    latitud: Number,
+    longitud: Number,
   };
 
   connect() {
@@ -23,8 +23,8 @@ export default class extends Controller {
   map() {
     if (this._map === undefined) {
       this._map = new google.maps.Map(this.mapTarget, {
-        center: new google.maps.LatLng(this.latitudValue, this.longitudValue),
-        zoom: 6,
+        center: new google.maps.LatLng(19.265129, -103.710844),
+        zoom: 16,
       });
     }
     return this._map;
