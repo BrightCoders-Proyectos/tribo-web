@@ -1,11 +1,14 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+<div id="clearance" class="px-6 py-16">
+  <%= render "shared/header_stamp" %>
+  
+  <h2 class="text-center mb-4"><%= t(".title") %></h2>
+  <h6 class="text-center mb-8"><%= t(".description") %></h6>
 
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit class: "button btn-prim" %>
     </div>
 
     <div class="other-links">
