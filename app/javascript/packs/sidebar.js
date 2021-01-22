@@ -1,7 +1,8 @@
 document.addEventListener('turbolinks:load', function(){
-  var sidebar = document.getElementById("sidebar");
-  var close = document.querySelector(".sidebar-close");
-  var menu = document.getElementById("menu");
+  let sidebar = document.getElementById("sidebar");
+  let close = document.querySelector(".sidebar-close");
+  let menu = document.getElementById("menu");
+  let sidebar_outside = document.querySelector(".sidebar-outside");
   const KEY_CODE_ESC = 27;
   
   function openNav() {
@@ -18,7 +19,9 @@ document.addEventListener('turbolinks:load', function(){
   
   menu.addEventListener('click',openNav);
 
-  close.addEventListener('click',closeNav)
+  close.addEventListener('click',closeNav);
+
+  sidebar_outside.addEventListener('click',closeNav)
 
   document.addEventListener('keydown', e => {
     if (e.keyCode == KEY_CODE_ESC && !this.isClose)

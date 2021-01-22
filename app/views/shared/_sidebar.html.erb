@@ -1,0 +1,29 @@
+<nav id="sidebar" class="sidebar-full hidden">
+  <div class="sidebar-outside">
+    <div class="absolute inset-0 bg-black opacity-50" tabindex="0"></div>
+  </div>
+  <aside class="sidebar">
+    <span class="sidebar-close">
+    <div class="mr-2 ml-auto mt-2 fill-current w-6 h-6 cursor-pointer">
+      <i class="fas fa-times"></i>
+    </div>
+    </span>
+    <span>
+      <%= image_tag 'tribo-logo-light.svg', class: 'sidebar-logo' %>
+    </span>
+    <span class="sidebar-item"><button id="modal-register" class="btn text-left">Regístrate / Mi cuenta</button></span> 
+    <span class="sidebar-item"><button id="modal-recommendations" class="btn text-left">#QuédateEnCasa<br><span class="pt-0 text-xs text-left">Recomendaciones para el aislamiento preventivo</span></button></span>
+    <span class="sidebar-item"><button id="modal-terms" class="btn text-left">Términos y condiciones</button></span> 
+    <span class="sidebar-item"><button id="modal-faq" class="btn text-left">Preguntas y respuestas</button></span> 
+    <span class="sidebar-item"><button id="modal-policy" class="btn text-left">Políticas de Privacidad</button></span>
+    <% if signed_in? %>
+    <span class="sidebar-item mt-12">
+      <%= link_to 'Salir de mi cuenta', sign_out_path, data: { method: :delete }, class: 'text-left' %>
+    </span
+    <% else %>
+    <span class="sidebar-item mt-12">
+      <%= link_to 'Iniciar sesión', sign_in_path, class: 'text-left' %>
+    </span>
+    <% end %>
+  </aside>
+</nav>
