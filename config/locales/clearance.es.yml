@@ -62,3 +62,10 @@ es:
       sign_in: Sign in
       title: Crea tu cuenta gratuita de tribo
       description: Tribo te ayuda a estar más cerca de tus clientes, solo regístrate y estarás listo para venderle a los clientes de tu comunidad
+    form:
+      label_name: Nombre completo
+      placeholder_name: Ingresa tu nombre completo
+      label_password: Contraseña
+      placeholder_password: Crea una contraseña
+      label_phone: Teléfono celular
+      placeholder_phone: Ingresa tu número telefónico
