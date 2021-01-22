@@ -5,7 +5,7 @@
 @layer base {
   /* Font Sizing and weight */
   body {
-    @apply text-lg md:text-xl xl:text-2xl;
+    @apply bg-scene text-lg md:text-xl xl:text-2xl;
   }
 
   h1 {
