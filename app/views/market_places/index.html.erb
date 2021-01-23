@@ -21,76 +21,73 @@
     <div class="p-4">
       <span id="modal-register" class="modal-close float-right hover:text-gray-300 no-underline cursor-pointer">
         <div class="mr-2 ml-auto mt-2 fill-current w-6 h-6 cursor-pointer">
-          <%= image_tag 'close.svg' %>
+          <i class="fas fa-times"></i>
         </div>
       </span>
     </div>
-    <div class="text-justify ml-6 font-bold text-2xl text-black">
-      Mi cuenta
+    <div class="text-justify ml-6">
+      <h3>Mi cuenta</h3>
     </div>
 
     <% @market_places.each do |market_place| %>
-      <% if current_user.email == User.find(market_place.user_id).email %>
-        <div class="grid grid-cols-2 mt-2.5">
-          <div clas="col-start-1 col-end-2">
-            <h2 class="text-xl font-bold ml-6">Nombre</h2>
-            <p class="text-sm ml-6"><%= User.find(market_place.user_id).name %></p>
-          </div>
-          <div clas="col-start-2 col-end-3">
-            <h2 class="text-xl font-bold ml-6">Telefono</h2>
-            <p class="text-sm ml-6"><%= User.find(market_place.user_id).phone %></p>
-          </div>
-        </div>
-        <div class="text-justify py-4 mt-2.5 ml-6 font-bold text-2xl text-black">
-          Mis negocios
-        </div>
-        <hr width="90%" class="ml-5">
+     <% if current_user.email == User.find(market_place.user_id).email %>
+        <div class="grid grid-cols-2 mt-2.5 ml-6">
+      <div clas="col-start-1 col-end-2">
+        <h5>Nombre completo</h5>
+            <p><%= User.find(market_place.user_id).name %></p>
+      </div>
+      <div clas="col-start-2 col-end-3">
+        <h5>Telefono</h5>
+            <p><%= User.find(market_place.user_id).phone %></p>
+      </div>
+    </div>
+    <div class="text-justify py-4 mt-2.5 ml-6">
+          <h3>Mis negocios</h3>
+    </div>
+    <hr width="90%" class="ml-5">
         <%break%>
       <%end%>
     <%end%>
 
-      <!-- ------------------------ Market places ------------------------------ -->
+    <!-- ------------------------ Market places ------------------------------ -->
     <% @market_places.each do |market_place| %>
       <% if current_user.email == User.find(market_place.user_id).email %>
-        <div class="grid grid-cols-1">
-          <h2 class="text-xl font-bold ml-6  mt-2.5">Nombre</h2>
-          <p class="text-sm ml-6"><%= market_place.business_name %></p>
-        </div>
+        <div class="grid grid-cols-1 ml-6">
+          <h5>Nombre</h5>
+          <p><%= market_place.business_name %></p>
+          <h5>Direccion</h5>
+          <p><%= market_place.address %></p>
+      </div>
 
-        <div clas="grid grid-cols-1">
-          <h2 class="text-xl font-bold ml-6  mt-2.5">Direccion</h2>
-          <p class="text-sm ml-6"><%= market_place.address %></p>
-        </div>
-
-        <div class="grid grid-cols-2 grid-rows-4">
+      <div class="grid grid-cols-2 grid-rows-4 ml-6">
           <div>
-            <h2 class="text-xl font-bold ml-6  mt-2.5">Giro</h2>
-            <p class="text-sm ml-6"><%= market_place.business_line %></p>
+            <h5>Giro</h5>
+            <p><%= market_place.business_line %></p>
+          </div>
+      
+          <div>
+            <h5>Vendiendo</h5>
+            <p><%= market_place.selling %></p>
           </div>
 
           <div>
-            <h2 class="text-xl font-bold ml-6  mt-2.5">Vendiendo</h2>
-            <p class="text-sm ml-6"><%= market_place.selling %></p>
+            <h5>Forma(s) de pago</h5>
+            <p><%= market_place.payment %></p>
+          </div>
+      
+          <div>
+            <h5>Tipo(s) de entrega</h5>
+            <p><%= market_place.pickup_type %></p>
           </div>
 
           <div>
-            <h2 class="text-xl font-bold ml-6  mt-2.5">Forma(s) de pago</h2>
-            <p class="text-sm ml-6"><%= market_place.payment %></p>
+            <h5>Servicio a domicilio</h5>
+            <p><%= market_place.service_days %></p>
           </div>
-
+      
           <div>
-            <h2 class="text-xl font-bold ml-6  mt-2.5">Tipos de entrega</h2>
-            <p class="text-sm ml-6"><%= market_place.pickup_type %></p>
-          </div>
-
-          <div>
-            <h2 class="text-xl font-bold ml-6  mt-2.5">Servicio a domicilio</h2>
-            <p class="text-sm ml-6"><%= market_place.service_days %></p>
-          </div>
-
-          <div>
-            <h2 class="text-xl font-bold ml-6  mt-2.5">Horario</h2>
-            <p class="text-sm ml-6"><%= market_place.open_hour.strftime('%H:%M') %> a <%= market_place.close_hour.strftime('%H:%M') %></p>
+           <h5>Horario</h5>
+            <p><%= market_place.open_hour.strftime('%H:%M') %> a <%= market_place.close_hour.strftime('%H:%M') %></p>
           </div>
 
           <div>
@@ -101,7 +98,24 @@
             <button class="bg-btn-editar hover:bg-yellow-300 text-white font-bold py-0.5 px-16 ml-6 mt-3 rounded-full shadow-md">Editar</button>
           </div>
 
-        </div> <!-- End Grid Mis negocios-->
+          </div> <!-- End Grid Mis negocios-->
+            <hr width="90%" class="ml-5">
+        <% end %>
+        <% if market_place == @market_places.last %>
+          <div align="center" class="ml-0">
+            <%= button_to 'Añadir nuevo negocio', new_market_place_path(market_place), method: 'get', class: 'button btn-prim w-full md:w-3/4' %>
+          </div>
+
+          <div align="center">
+            <%= button_to 'Borrar cuenta', new_market_place_path(market_place), method: 'get', class: 'button btn-neutral w-full md:w-1/2' %>
+          </div>
+
+          <div align="center">
+            <%= button_to 'Editar info', new_market_place_path(market_place), method: 'get',class: 'button btn-sec w-full md:w-1/2' %>
+          </div>    
+          <% end %>
+    <% end %>
+
         <hr width="90%" class="ml-5">
       <%end%>
     <%end%>
