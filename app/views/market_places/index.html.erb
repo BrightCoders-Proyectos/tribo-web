@@ -98,37 +98,40 @@
 </div>
 <% @market_places.each do |market_place| %>
   <!-- Modal Right -->
-  <div class="flex items-center justify-center">
-    <button class="modal-button w-16" name="<%= market_place.id %>"><%= image_tag 'md/'+market_place.business_line.downcase!+'.svg' %></button>
-  </div>
-  <div id="<%= market_place.id %>" class="modal opacity-0 pointer-events-none absolute w-full h-full top-0 left-0 flex items-center justify-end">
-    <div class="modal-overlay absolute w-full h-full bg-black opacity-25 top-0 left-0 cursor-pointer"></div>
-    <div class="absolute w-1/4 h-2/3 bg-white rounded-sm shadow-lg justify-center rounded-l-lg">
-      <div class="flex flex-col pb-8">
-        <div class="mr-2 ml-auto mt-2 fill-current text-gray-500 w-6 h-6 cursor-pointer">
-          <span class="info-close float-right text-lg font-bold text-gray-500 hover:text-gray-300 no-underline cursor-pointer"><%= image_tag 'close.svg' %></span>
+  <button class="modal-button" name="<%= market_place.id %>"><%= image_tag 'md/'+market_place.business_line.downcase!+'.svg' %></button>
+
+  <div id="<%= market_place.id %>" class="info-store-full pointer-events-none opacity-0">
+    <div class="modal-overlay info-store-outside"></div>
+    <div class="info-store-modal">
+      <div class="flex flex-col">
+        <div class="fill-current text-gray-500 cursor-pointer">
+          <span class="info-close info-store-modal-close"><i class="fas fa-times fa-2x"></i></span>
         </div>
-        <div class="mx-4 flex flex-wrap t-0 pb-6">
+        <div class="flex flex-wrap">
           <!-- Grid column -->
-          <div class="w-1/3 w-16">
+          <div class="w-16 h-24 ml-12 mr-8 mb-8">
             <!-- Column contents -->
             <%= image_tag 'bussines_marker.svg' %>
           </div>
           <!-- Grid column -->
-          <div class="w-2/3 flex flex-col justify-center">
+          <div class="flex flex-col justify-center mr-12">
             <!-- Column contents -->
-            <h1 class="text-sm font-bold ml-4"><%= market_place.business_name %></h1>
-            <p class="text-xs ml-4"><%= market_place.business_line %></p>
+            <p class="info-store-modal-title"><%= market_place.business_name %></p>
+            <p class="info-store-modal-content"><%= market_place.business_line %></p>
+            <p class="info-store-modal-content"><%= market_place.service_days %>, <%= market_place.open_hour.to_s(:time) %> a <%= market_place.close_hour.to_s(:time) %></p>
           </div>
         </div>
-        <div class="mx-4 text-sm">
-          <h2 class="text-xs font-bold">Dirección:</h2>
-          <p class="text-xs pb-6"><%= market_place.address %>, <%= market_place.district %>, <%= market_place.postcode %></p>
-          <h2 class="text-xs font-bold">Teléfono:</h2>
-          <p class="text-xs pb-6"><%= User.find(market_place.user_id).phone %></p>
-          <div class="pt-2 font-bold text-center">
-            <div align="center"><img class="w-4 h-4" src="https://cdns.iconmonstr.com/wp-content/assets/preview/2016/240/iconmonstr-whatsapp-1.png"></div>
-            <a class="" href="https://wa.me/<%= User.find(market_place.user_id).phone %>" target="_blank">Enviar un mensaje</a>
+        <div class="text-sm ml-12 mr-12">
+          <p class="info-store-modal-title">Dirección:</p>
+          <p class="info-store-modal-content"><%= market_place.address %>, <%= market_place.district %>, <%= market_place.postcode %></p>
+          <p class="info-store-modal-title">Tipo(s) de entrega:</p>
+          <p class="flex flex-row space-x-4 info-store-modal-content"><%= image_tag 'pickup_products.svg', class: 'mr-1.5' %> Recoger producto <%= image_tag 'send_products.svg' %> Recibir producto</p>
+          <p class="info-store-modal-title">Acepta pagos con:</p>
+          <p class="flex flex-row space-x-4 info-store-modal-content"><%= image_tag 'cash.svg', class: 'mr-1.5' %> Efectivo <%= image_tag 'credit_card.svg' %> Tarjeta de débito/crédito</p>
+          <p class="info-store-modal-title">Teléfono:</p>
+          <p class="info-store-modal-content"><%= User.find(market_place.user_id).phone %></p>
+          <div class="info-store-modal-whatsapp">
+            <a class="button btn-prim" href="https://wa.me/<%= User.find(market_place.user_id).phone %>" target="_blank"><%= image_tag 'whatsapp.svg', class: 'mr-3' %> Enviar un WhatsApp</a>
           </div>
         </div>
       </div>
