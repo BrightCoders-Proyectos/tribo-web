@@ -59,7 +59,7 @@
           </div>
 
           <div>
-            <%= button_to 'Editar', edit_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get', class: 'button btn-sec ml-6 mt-3' %>
+            <%= button_to 'Editar', edit_market_place_path(market.id), method: 'get', class: 'button btn-sec ml-6 mt-3' %>
           </div>
 
           </div> <!-- End Grid Mis negocios-->
