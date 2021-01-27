@@ -1,0 +1,25 @@
+<%= render "shared/header_stamp" %>
+
+<div id="clearance" class="sign-up">
+  <h3><%= t(".Edit my account") %></h3>
+
+  <%= form_for @user do |form| %>
+    <div class="text-field">
+      <h5><%= form.label :name %></h5>
+      <%= form.text_field :name, class: 'input-field' %>
+    </div>
+
+    <div class="text-field">
+      <h5><%= form.label :phone %></h5>
+      <%= form.text_field :phone, :maxlength => 10, class: 'input-field' %>
+    </div>
+
+    <h5 class="text-tribo"><%= link_to 'Cambiar contraseña'%></h5>
+
+    <div class="submit-field">
+      <%= form.submit class: 'button btn-prim'%>
+    </div>
+
+    <%= submit_tag 'Cancel', class: 'button btn-neutral' %>
+  <% end %>
+</div>
