@@ -1,86 +1,97 @@
-<div class="px-6 y py-16">
-  <div class="grid grid-cols-2 mt-2.5 ml-6">
-    <div clas="col-start-1 col-end-2">
-      <h5>Nombre completo: </h5>
+<div class="px-6 y py-2">
+  <div class="text-justify py-4 mt-2.5">
+    <h3>Mi cuenta</h3>
+  </div>
+
+  <div class="grid lg:grid-cols-2 md:grid-cols-1 mt-2.5">
+    <div clas="lg:col-start-1 lg:col-end-2">
+      <h5>Nombre completo</h5>
       <p><%= @user.name %></p>
     </div>
+
     <div clas="col-start-2 col-end-3">
-      <h5>Telefono</h5>
-      <p><%= @user.phone %></p>
+      <h5>Correo electrónico</h5>
+      <p><%= @user.email %></p>
     </div>
   </div>
-  <div class="text-justify py-4 mt-2.5 ml-6">
+  <div class="text-justify py-4 mt-2.5">
     <h3>Mis negocios</h3>
   </div>
-  <hr width="90%" class="ml-5">
+  <hr width="90%" class="ml-5 border-scene-neutral">
 
        
     <% MarketPlace.where(user_id: @user.id).each do |market| %>
-       <div class="grid grid-cols-1 ml-6">
-          <h5>Nombre</h5>
-          <p><%= market.business_name %></p>
+      <h5 class="mt-6">Nombre</h5>
+      <p><%= market.business_name %></p>
+      
+      <div class="grid lg:grid-cols-2 md:grid-cols-1 mt-4">
+        <div clas="lg:col-start-1 lg:col-end-2">
           <h5>Direccion</h5>
           <p><%= market.address %></p>
         </div>
+        <div clas="col-start-2 col-end-3">
+          <h5>Teléfono:</h5>
+          <p><%= User.find(market.user_id).phone %></p>
+        </div>
+      </div>
 
-        <div class="grid grid-cols-2 grid-rows-4 ml-6">
-          <div>
-            <h5>Giro</h5>
-            <p><%= market.business_line%></p>
-          </div>
+      <div class="grid lg:grid-cols-2 lg:grid-rows-4 md:grid-cols-1">
+        <div class="mt-4">
+          <h5>Giro</h5>
+          <p><%= market.business_line%></p>
+        </div>
       
-          <div>
-            <h5>Vendiendo</h5>
-            <p><%= market.selling %></p>
-          </div>
+        <div class="mt-4">
+          <h5>Vendiendo</h5>
+          <p><%= market.selling %></p>
+        </div>
 
-          <div>
-            <h5>Forma(s) de pago</h5>
-            <p><%= market.payment %></p>
-          </div>
+        <div class="mt-4">
+          <h5>Forma(s) de pago</h5>
+          <p><%= market.payment %></p>
+        </div>
       
-          <div>
-            <h5>Tipo(s) de entrega</h5>
-            <p><%= market.pickup_type%></p>
-          </div>
+        <div class="mt-4">
+          <h5>Tipo(s) de entrega</h5>
+          <p><%= market.pickup_type%></p>
+        </div>
 
-          <div>
-            <h5>Servicio a domicilio</h5>
-            <p><%= market.service_days %></p>
-          </div>
+        <div class="mt-4">
+          <h5>Servicio a domicilio</h5>
+          <p><%= market.service_days %></p>
+        </div>
       
+        <div class="mt-4">
+          <h5>Horario</h5>
+          <p><%= market.open_hour.strftime('%H:%M') %> a <%= market.close_hour.strftime('%H:%M') %></p>
+        </div>
+      </div >
+
+        <div class="flex flex-row items-center">
           <div>
-           <h5>Horario</h5>
-            <p><%= market.open_hour.strftime('%H:%M') %> a <%= market.close_hour.strftime('%H:%M') %></p>
+            <%= button_to 'Eliminar', edit_market_place_path(market.id), method: 'get', class: 'button btn-neutral mt-4 w-40 justify-center' %>
           </div>
 
           <div>
-            <%= button_to 'Eliminar', edit_market_place_path(market.id), method: 'get', class: 'button btn-neutral ml-6 mt-3' %>
+            <%= button_to 'Editar', edit_market_place_path(market.id), method: 'get', class: 'button btn-sec ml-2 mt-4 w-40 justify-center' %>
           </div>
+        </div>
 
-          <div>
-            <%= button_to 'Editar', edit_market_place_path(market.id), method: 'get', class: 'button btn-sec ml-6 mt-3' %>
-          </div>
-
-          </div> <!-- End Grid Mis negocios-->
-            <hr width="90%" class="ml-5">
+          <!-- End Grid Mis negocios-->
+            <hr width="90%" class="ml-5 mt-4 border-scene-neutral">
              <%end%>
 
         <!-- ---------------------   End Market Places --------------------------- -->
         </div>
         </div>
 
-        <div align="center">
-            <%= button_to 'Añadir nuevo negocio', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get', class: 'button btn-prim md:w-3/4 text-center' %>
-          </div>
+        <div align="center" class="mb-16">
+            <%= button_to 'Añadir nuevo negocio', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get', class: 'button btn-prim w-80 justify-center' %>
 
-          <div align="center">
-            <%= button_to 'Borrar cuenta', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get', class: 'button btn-neutral md:w-1/2' %>
-          </div>
+             <%= button_to 'Borrar cuenta', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get', class: 'button btn-neutral mt-16 w-80 justify-center' %>
 
-          <div align="center">
-            <%= button_to 'Editar info', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get',class: 'button btn-sec md:w-1/2' %>
-          </div>    
+             <%= button_to 'Editar info', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get',class: 'button btn-sec mt-4 w-80 justify-center' %>
+          </div> 
 </div>
 
 
