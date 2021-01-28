@@ -14,7 +14,7 @@
       <%= form.text_field :phone, :maxlength => 10, class: 'input-field' %>
     </div>
 
-    <h5 class="text-tribo"><%= link_to 'Cambiar contraseña'%></h5>
+    <h5 class="text-tribo"><%= link_to 'Cambiar contraseña', edit_user_password_path(@user)%></h5>
 
     <div class="submit-field">
       <%= form.submit class: 'button btn-prim'%>
