@@ -2,24 +2,24 @@
   <div id="clearance" class="sign-up flex flex-col">
     <%= render "shared/header_stamp" %>
 
-    <h3><%= t(".Edit my account") %></h3>
+    <h3><%= t(".Editar mi cuenta") %></h3>
 
     <%= form_for @user do |form| %>
       <div class="text-field mt-6">
-        <h5><%= form.label :name %></h5>
+        <h5>Nombre</h5>
         <%= form.text_field :name, class: 'input-field w-full mt-1' %>
       </div>
 
       <div class="text-field mt-4">
-        <h5><%= form.label :email %></h5>
+        <h5>Correo electrónico</h5>
         <%= form.text_field :email, class: 'input-field w-full mt-1' %>
       </div>
 
       <h5 class="text-tribo mt-4"><%= link_to 'Cambiar contraseña', edit_user_password_path(@user)%></h5>
 
       <div class="submit-field flex flex-row items-center mt-8">
-        <%= form.submit class: 'button btn-prim mt-2 mr-1 w-40 justify-center'%>
-        <%= submit_tag 'Cancel', class: 'button btn-neutral mt-2 w-40 justify-center' %>
+        <%= submit_tag 'Cancelar', class: 'button btn-neutral mt-2 w-40 justify-center' %>
+        <%= form.submit 'Guardar', class: 'button btn-prim mt-2 ml-2 w-40 justify-center'%>
       </div>
     <% end %>
   </div>
