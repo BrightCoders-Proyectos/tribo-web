@@ -93,9 +93,3 @@
              <%= button_to 'Editar info', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get',class: 'button btn-sec mt-4 w-80 justify-center' %>
           </div> 
 </div>
-
-<div align="center">
-  <%= button_to 'Editar info', edit_user_path(@user), method: 'get',class: 'button btn-sec md:w-1/2' %>
-</div>    
-
-
