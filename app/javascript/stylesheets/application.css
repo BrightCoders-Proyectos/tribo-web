@@ -107,6 +107,43 @@
     @apply flex items-center w-11/12 py-1.5 mb-6 text-base xl:py-2 pl-6 md:pl-8 xl:pl-12 pr-3 md:pr-4 xl:pr-6 bg-tribo hover:bg-tribo-secondary active:shadow-md rounded-r-full;
   }
 
+  /* Modal Information Store */
+  .info-store-full {
+    @apply absolute w-full h-full top-0 left-0 flex items-center lg:justify-end justify-center;
+  }
+
+  .info-store-outside {
+    @apply absolute w-full h-full top-0 left-0 bg-black opacity-25 cursor-pointer;
+  }
+
+  .info-store-modal {
+    @apply absolute md:relative w-auto md:w-full lg:w-1/2 lg:mr-0 top-6 md:object-center lg:object-right md:ml-12 md:mr-12 ml-6 mr-6 lg:mt-0 mt-0 h-auto pb-12 bg-gray-100 shadow-lg rounded-l-3xl rounded-r-3xl lg:rounded-r-none;
+  }
+
+  .info-store-modal-close {
+    @apply float-right mt-12 mr-10 text-lg font-bold text-gray-500 hover:text-gray-300 no-underline cursor-pointer;
+  }
+
+  .info-store-modal-logo {
+    @apply flex flex-col m-4 lg:ml-12 md:ml-8 mr-4 md:mr-8 lg:mr-8 mb-8;
+  }
+
+  .info-store-modal-businessname {
+    @apply flex flex-col mr-4 md:mr-12 lg:mr-12;
+  }
+
+  .info-store-modal-title {
+    @apply font-medium text-sm text-gray-900 mb-1;
+  }
+
+  .info-store-modal-content {
+    @apply font-normal text-sm text-gray-900 mb-4;
+  }
+
+  .info-store-modal-whatsapp {
+    @apply font-medium text-sm flex items-center justify-center;
+  }
+
   /* NavBar Container Styles */
   .navbar {
     @apply w-screen py-2 md:py-4 px-4 md:px-8 xl:px-12 flex items-center bg-scene shadow-lg;

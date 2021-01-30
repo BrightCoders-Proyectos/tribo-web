@@ -1,4 +1,7 @@
 import { Controller } from 'stimulus';
+import foodIcon from '../../assets/images/md/food.svg';
+import productsIcon from '../../assets/images/md/products.svg';
+import servicesIcon from '../../assets/images/md/services.svg';
 
 export default class extends Controller {
   static targets = ['map', 'field', 'getCurrentLocation'];
@@ -18,6 +21,7 @@ export default class extends Controller {
     this.map();
     this.marker();
     this.autocomplete();
+    this.bussinessMarkers();
   }
 
   map() {
@@ -83,5 +87,61 @@ export default class extends Controller {
 
   getCurrentLocation() {
     console.log('FUNCIONA!');
+  }
+
+  bussinessMarkers() {
+    const icons = {
+      food: {
+        icon: foodIcon,
+      },
+      products: {
+        icon: productsIcon,
+      },
+      services: {
+        icon: servicesIcon,
+      },
+    };
+    const store = [
+      {
+        position: new google.maps.LatLng(19.265129, -103.710844),
+        type: 'food',
+      },
+      {
+        position: new google.maps.LatLng(19.265129, -103.720844),
+        type: 'products',
+      },
+      {
+        position: new google.maps.LatLng(19.265129, -103.700844),
+        type: 'services',
+      },
+      {
+        position: new google.maps.LatLng(19.262129, -103.710844),
+        type: 'food',
+      },
+      {
+        position: new google.maps.LatLng(19.265129, -103.690844),
+        type: 'products',
+      },
+      {
+        position: new google.maps.LatLng(19.264129, -103.710844),
+        type: 'services',
+      },
+    ];
+    const contentString = '<p>La fonda de Doña Luisa</p><p>+Info -></p>';
+    const infowindow = new google.maps.InfoWindow({
+      content: contentString,
+    });
+    for (let i = 0; i < store.length; i += 1) {
+      const marker = new google.maps.Marker({
+        position: store[i].position,
+        icon: icons[store[i].type].icon,
+        map: this.map(),
+      });
+      marker.addListener('click', () => {
+        infowindow.open(this.map(), marker);
+      });
+    }
+
+    return this._marker;
   }
 }
