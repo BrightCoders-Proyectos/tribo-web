@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < Clearance::UsersController
+class UsersController < ApplicationController
   before_action :current_user, only: [:show, :edit, :update]
   before_action :check_for_cancel, only: [:edit, :update]
 
@@ -17,10 +17,6 @@ class UsersController < Clearance::UsersController
     if params[:commit] == "Cancel"
       redirect_to user_url
     end
-  end
-
-  def index
-    @users = User.all
   end
 
   def show
