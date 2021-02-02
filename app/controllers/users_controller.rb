@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < Clearance::UsersController
+  before_action :require_login, only: [:show, :edit, :update]
   before_action :current_user, only: [:show, :edit, :update]
   before_action :check_for_cancel, only: [:edit, :update]
 
@@ -35,16 +36,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
+  def desactivate
     @user = User.find(params[:id])
-    @user.destroy
-
-    redirect_to market_place_url
+    @user.update_attribute(:status, false)
+    sign_out
+    redirect_to sign_in_path
   end
 
   private
     def user_params
-      params.require(:user).permit(:name, :phone, :email, :password)
+      params.require(:user).permit(:name, :phone, :email, :password, :status)
     end
 
     def current_user

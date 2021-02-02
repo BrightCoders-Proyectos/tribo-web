@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resource :session, controller: "clearance/sessions", only: [:create]
   
 
-  resources :users, only: [:create, :show, :edit, :update, :destroy] do
+  resources :users, only: [:create, :show, :edit, :update] do
+    patch :desactivate, on: :member 
     resource :password,
       controller: 'clearance/passwords',
       only: [:create, :edit, :update]
