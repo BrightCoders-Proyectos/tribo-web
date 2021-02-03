@@ -28,7 +28,7 @@ class UsersController < Clearance::UsersController
 
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if current_user.update(user_params)
         format.html { redirect_to user_url }
       else
         format.html { render :edit }
@@ -37,8 +37,8 @@ class UsersController < Clearance::UsersController
   end
 
   def desactivate
-    @user = User.find(params[:id])
-    @user.update_attribute(:status, false)
+    current_user = User.find(params[:id])
+    current_user.update_attribute(:status, false)
     sign_out
     redirect_to sign_in_path
   end
@@ -46,9 +46,5 @@ class UsersController < Clearance::UsersController
   private
     def user_params
       params.require(:user).permit(:name, :phone, :email, :password, :status)
-    end
-
-    def current_user
-      @user = User.find(params[:id])
     end
 end

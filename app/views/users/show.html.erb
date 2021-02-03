@@ -1,4 +1,4 @@
-<% if @user.status %>
+<% if current_user.status %>
 <div class="px-6 y py-2">
   <div class="text-justify py-4 mt-2.5">
     <%= render "shared/header_stamp" %>
@@ -8,12 +8,12 @@
   <div class="grid lg:grid-cols-2 md:grid-cols-1 mt-2.5">
     <div clas="lg:col-start-1 lg:col-end-2">
       <h5>Nombre completo</h5>
-      <p><%= @user.name %></p>
+      <p><%= current_user.name %></p>
     </div>
 
     <div clas="col-start-2 col-end-3">
       <h5>Correo electrónico</h5>
-      <p><%= @user.email %></p>
+      <p><%= current_user.email %></p>
     </div>
   </div>
 
@@ -24,7 +24,7 @@
   <hr class="w-full border-scene-neutral">
 
        
-  <% MarketPlace.where(user_id: @user.id).each do |market| %>
+  <% MarketPlace.where(user_id: current_user.id).each do |market| %>
     <h5 class="mt-6">Nombre</h5>
     <p><%= market.business_name %></p>
       
@@ -85,11 +85,11 @@
 </div>
 
 <div align="center" class="mb-16">
-  <%= button_to 'Añadir nuevo negocio', new_market_place_path(MarketPlace.where(user_id: @user.id).select("id")), method: 'get', class: 'button btn-prim w-80 justify-center' %>
+  <%= button_to 'Añadir nuevo negocio', new_market_place_path(MarketPlace.where(user_id: current_user.id).select("id")), method: 'get', class: 'button btn-prim w-80 justify-center' %>
 
-  <%= button_to 'Borrar cuenta', desactivate_user_path(@user.id), method: :patch, data: { confirm: 'Are you sure?' }, class: 'button btn-neutral mt-16 w-80 justify-center' %>
+  <%= button_to 'Borrar cuenta', desactivate_user_path(current_user.id), method: :patch, data: { confirm: 'Are you sure?' }, class: 'button btn-neutral mt-16 w-80 justify-center' %>
 
-  <%= button_to 'Editar info', edit_user_path(@user.id), method: 'get',class: 'button btn-sec mt-4 w-80 justify-center' %>
+  <%= button_to 'Editar info', edit_user_path(current_user.id), method: 'get',class: 'button btn-sec mt-4 w-80 justify-center' %>
 
   <%= button_to 'Volver', market_places_path, method: 'get', class: 'button btn-prim mt-4 w-80 justify-center' %>
 </div> 
