@@ -11,14 +11,11 @@
     <span>
       <%= image_tag 'tribo-logo-light.svg', class: 'sidebar-logo' %>
     </span>
-    <% @market_places.each do |market_place| %>
       <% if current_user.present? %>
-            <span class="sidebar-item"><button id="modal-register" class="btn text-left">
-              <button id="modal-register" class="btn text-left"><%= link_to "Mi cuenta", user_path(market_place.user_id) %></button>
-            </span> 
-      <%break%>
+        <span class="sidebar-item"><button id="modal-register" class="btn text-left">
+          <button id="modal-register" class="btn text-left"><%= link_to "Mi cuenta", user_path(current_user) %></button>
+        </span> 
       <%end%>
-    <%end%>
     <span class="sidebar-item"><button id="modal-recommendations" class="btn text-left">#QuédateEnCasa<br><span class="pt-0 text-xs text-left">Recomendaciones para el aislamiento preventivo</span></button></span>
     <span class="sidebar-item"><button id="modal-terms" class="btn text-left">Términos y condiciones</button></span> 
     <span class="sidebar-item"><button id="modal-faq" class="btn text-left">Preguntas y respuestas</button></span> 

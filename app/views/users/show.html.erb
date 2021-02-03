@@ -24,7 +24,7 @@
   <hr class="w-full border-scene-neutral">
 
        
-  <% MarketPlace.where(user_id: current_user.id).each do |market| %>
+  <% @user_market.each do |market| %>
     <h5 class="mt-6">Nombre</h5>
     <p><%= market.business_name %></p>
       
@@ -36,7 +36,7 @@
 
       <div clas="col-start-2 col-end-3">
         <h5>Teléfono:</h5>
-        <p><%= User.find(market.user_id).phone %></p>
+        <p><%= current_user.phone %></p>
       </div>
     </div>
 
@@ -85,9 +85,9 @@
 </div>
 
 <div align="center" class="mb-16">
-  <%= button_to 'Añadir nuevo negocio', new_market_place_path(MarketPlace.where(user_id: current_user.id).select("id")), method: 'get', class: 'button btn-prim w-80 justify-center' %>
+  <%= button_to 'Añadir nuevo negocio', new_market_place_path, method: 'get', class: 'button btn-prim w-80 justify-center' %>
 
-  <%= button_to 'Borrar cuenta', desactivate_user_path(current_user.id), method: :patch, data: { confirm: 'Are you sure?' }, class: 'button btn-neutral mt-16 w-80 justify-center' %>
+  <%= button_to 'Borrar cuenta', deactivate_user_path(current_user.id), method: :patch, data: { confirm: 'Are you sure?' }, class: 'button btn-neutral mt-16 w-80 justify-center' %>
 
   <%= button_to 'Editar info', edit_user_path(current_user.id), method: 'get',class: 'button btn-sec mt-4 w-80 justify-center' %>
 

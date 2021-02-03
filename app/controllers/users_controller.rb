@@ -1,18 +1,9 @@
 # frozen_string_literal: true
 
-class UsersController < Clearance::UsersController
+class UsersController < ApplicationController
   before_action :require_login, only: [:show, :edit, :update]
   before_action :current_user, only: [:show, :edit, :update]
   before_action :check_for_cancel, only: [:edit, :update]
-
-  # Could be useful for a future issue
-  # before_action :another_user
-
-  # def another_user
-  #   unless user_url.end_with?(current_user.id.to_s)
-  #     redirect_to request.referer
-  #   end
-  # end
 
   def check_for_cancel
     if params[:commit] == "Cancel"
@@ -20,7 +11,18 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    user = User.create(user_params)
+
+    redirect_to users_path(user)
+  end
+
   def show
+    @user_market = MarketPlace.where(user_id: current_user.id)
   end
 
   def edit
@@ -36,8 +38,7 @@ class UsersController < Clearance::UsersController
     end
   end
 
-  def desactivate
-    current_user = User.find(params[:id])
+  def deactivate
     current_user.update_attribute(:status, false)
     sign_out
     redirect_to sign_in_path

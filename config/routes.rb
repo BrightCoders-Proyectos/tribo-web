@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
 
   resources :users, only: [:create, :show, :edit, :update] do
-    patch :desactivate, on: :member 
+    patch :deactivate, on: :member 
     resource :password,
       controller: 'clearance/passwords',
       only: [:create, :edit, :update]
