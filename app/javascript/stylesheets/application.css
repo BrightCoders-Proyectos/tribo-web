@@ -18,7 +18,7 @@
 
   h3,
   h4 {
-    @apply text-3xl md:text-4xl 2xl:text-5xl !important;
+    @apply text-3xl md:text-4xl 2xl:text-5xl font-bold mb-8 !important;
   }
 
   h5,
@@ -31,9 +31,9 @@
     @apply font-bold !important;
   }
 
-  /* user's and market place's data in modal */
-  .modal_data {
-    @apply text-xl font-bold ml-6  mt-2.5; }
+  p {
+    @apply mb-6;
+  }
 
   input,
   input::placeholder {
@@ -84,6 +84,23 @@
   /* Main modal styles */
   .modal {
     @apply w-full p-4 md:p-8 xl:p-12 flex flex-col bg-scene rounded-2xl shadow-lg;
+  }
+
+  .modal-full {
+    @apply absolute transition-opacity duration-500 bg-gray-500 pt-20 md:pt-0 lg:pt-0 xl:pt-0 w-full h-full top-0 left-0 z-50 overflow-auto md:flex md:items-center md:justify-center;
+  }
+
+  .modal-content {
+    @apply bg-white mr-6 ml-6 md:mr-12 md:ml-12 lg:mr-16 lg:ml-16 shadow-lg rounded-lg;
+  }
+
+  .modal-text {
+    @apply text-justify mr-12 ml-12 pt-20 pb-12 text-base;
+  }
+
+  /* Icon close */
+  .modal-close {
+    @apply float-right no-underline cursor-pointer mt-12 pr-12;
   }
 
   /* SideBar Container Styles */
