@@ -1,0 +1,26 @@
+<div class="flex flex-col items-center px-4 py-12 md:px-32 lg:px-60 py-10 lg:py-14">
+  <div id="clearance" class="sign-up flex flex-col">
+    <%= render "shared/header_stamp" %>
+
+    <h3><%= t(".Editar mi cuenta") %></h3>
+
+    <%= form_for current_user do |form| %>
+      <div class="text-field mt-6">
+        <h5>Nombre</h5>
+        <%= form.text_field :name, class: 'input-field w-full mt-1' %>
+      </div>
+
+      <div class="text-field mt-4">
+        <h5>Correo electrónico</h5>
+        <%= form.text_field :email, class: 'input-field w-full mt-1' %>
+      </div>
+
+      <h5 class="text-tribo mt-4"><%= link_to 'Cambiar contraseña', edit_user_password_path(current_user)%></h5>
+
+      <div class="submit-field flex flex-row items-center mt-8">
+        <%= submit_tag 'Cancelar', class: 'button btn-neutral mt-2 w-40 justify-center' %>
+        <%= form.submit 'Guardar', class: 'button btn-prim mt-2 ml-2 w-40 justify-center'%>
+      </div>
+    <% end %>
+  </div>
+</div>

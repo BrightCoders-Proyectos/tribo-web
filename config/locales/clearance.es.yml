@@ -43,15 +43,14 @@ es:
       sign_out: Sign out
   passwords:
     create:
-      description: You will receive an email within the next few minutes. It
-        contains instructions for changing your password.
+      description: Recibirás un correo electrónicos dentro de los próximos 
+        minutos. Este contiene instrucciones para el cambio de tu contraseña.
     edit:
       description: Your password has been reset. Choose a new password below.
       title: Change your password
     new:
-      description: To be emailed a link to reset your password, please enter
-        your email address.
-      title: Reset your password
+      description: Para recibir un correo electrónico, por favor ingresa tu dirección de correo electrónico.
+      title: Cambia tu contraseña
   sessions:
     form:
       forgot_password: Forgot password?

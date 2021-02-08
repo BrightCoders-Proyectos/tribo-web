@@ -1,21 +1,25 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<div class="flex flex-col items-center px-6 py-16 md:px-32 lg:px-60 py-10 lg:py-14">
+  <div id="clearance" class="password-reset flex flex-col">
+    <%= render "shared/header_stamp" %>
+    <h3><%= t(".title") %></h3>
 
-  <p><%= t(".description") %></p>
+    <p class="mt-4"><%= t(".description") %></p>
 
-  <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
-    </div>
+    <%= form_for :password, url: passwords_path do |form| %>
+      <div class="text-field mt-6">
+        <h5>Correo electrónico</h5>
+        <%= form.text_field :email, type: 'email', class: 'input-field w-full mt-1' %>
+      </div>
 
-        <div class="password-field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
-    </div>
+      <div class="password-field mt-6">
+        <h5>Contraseña</h5>
+        <%= form.password_field :password, class: 'input-field w-full mt-1' %>
+      </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-  <% end %>
+      <div class="submit-field flex flex-row items-center mt-6">
+        <%= form.submit 'Enviar' ,class: 'button btn-prim mr-1 w-40 justify-center' %>
+        <%= submit_tag 'Cancelar', class: 'button btn-neutral w-40 justify-center' %>
+      </div>
+    <% end %>
+  </div>
 </div>
