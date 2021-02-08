@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   before_action :check_for_cancel, only: [:edit, :update]
 
   def check_for_cancel
-    if params[:commit] == "Cancel"
-      redirect_to user_url
+    if params[:commit] == "Cancelar"
+      redirect_to my_account_path
     end
   end
 
@@ -18,10 +18,13 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
 
-    redirect_to users_path(user)
+    redirect_to sign_in_path(user)
   end
 
   def show
+  end
+
+  def index
     @user_market = MarketPlace.where(user_id: current_user.id)
   end
 
@@ -31,7 +34,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if current_user.update(user_params)
-        format.html { redirect_to user_url }
+        format.html { redirect_to my_account_path }
       else
         format.html { render :edit }
       end
