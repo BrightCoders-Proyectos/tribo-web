@@ -16,9 +16,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-
-    redirect_to sign_in_path(user)
+    User.create(user_params)
+    redirect_to market_places_path
   end
 
   def show
