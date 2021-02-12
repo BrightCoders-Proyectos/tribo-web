@@ -13,7 +13,7 @@
     </span>
       <% if current_user.present? %>
         <span class="sidebar-item"><button id="modal-register" class="btn text-left">
-          <button id="modal-register" class="btn text-left"><%= link_to "Mi cuenta", user_path(current_user) %></button>
+          <button id="modal-register" class="btn text-left"><%= link_to "Mi cuenta", my_account_path %></button>
         </span> 
       <%end%>
     <span class="sidebar-item"><button id="modal-recommendations" class="btn text-left">#QuédateEnCasa<br><span class="pt-0 text-xs text-left">Recomendaciones para el aislamiento preventivo</span></button></span>
