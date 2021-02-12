@@ -30,5 +30,12 @@ module Tribo
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "https://#{ ENV["EXTERNAL_ORIGIN_URL_ALLOWED"] }",
+                "http://#{ ENV["EXTERNAL_ORIGIN_URL_ALLOWED"] }"
+        resource '/api/v1/*', headers: :any, methods: :any, vary: "Origin", credentials: true
+      end
+    end
   end
 end
