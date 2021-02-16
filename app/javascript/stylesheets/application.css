@@ -170,6 +170,16 @@
     @apply font-medium text-sm flex items-center justify-center;
   }
 
+  /* NavBar for Filter */
+
+  .navbar-filter {
+    @apply fixed h-16 lg:h-24 bottom-0 mb-8 lg:mb-0 md:mr-48 md:ml-48 bg-gray-100 rounded-full lg:rounded-t-3xl lg:rounded-b-none shadow;
+  }
+
+  .navbar-filter-items {
+    @apply flex flex-row items-center justify-center text-center pt-4 font-bold text-2xl px-6;
+  }
+
   /* NavBar Container Styles */
   .navbar {
     @apply w-screen py-2 md:py-4 px-4 md:px-8 xl:px-12 flex items-center bg-scene shadow-lg;

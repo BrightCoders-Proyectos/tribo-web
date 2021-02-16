@@ -6,15 +6,8 @@ class MarketPlacesController < ApplicationController
   # GET /market_places.json
   def index
     @market_places = case params[:business_line]
-    when 'Products'
-      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
-    # A was pressed
-    when 'Services'
-      # B was pressed
-      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
-    when 'Food'
-      # C was pressed
-      MarketPlace.where('business_line LIKE ?', "%#{params[:business_line]}%")
+    when "Products", "Services", "Food"
+      MarketPlace.where("business_line LIKE ?", "%#{params[:business_line]}%")
     else
       MarketPlace.all
     end
@@ -41,7 +34,7 @@ class MarketPlacesController < ApplicationController
 
     respond_to do |format|
       if @market_place.save
-        format.html { redirect_to @market_place, notice: 'Market place was successfully created.' }
+        format.html { redirect_to @market_place, notice: "Market place was successfully created." }
         format.json { render :show, status: :created, location: @market_place }
       else
         format.html { render :new }
@@ -55,7 +48,7 @@ class MarketPlacesController < ApplicationController
   def update
     respond_to do |format|
       if @market_place.update(market_place_params)
-        format.html { redirect_to @market_place, notice: 'Market place was successfully updated.' }
+        format.html { redirect_to @market_place, notice: "Market place was successfully updated." }
         format.json { render :show, status: :ok, location: @market_place }
       else
         format.html { render :edit }
@@ -69,7 +62,8 @@ class MarketPlacesController < ApplicationController
   def destroy
     @market_place.destroy
     respond_to do |format|
-      format.html { redirect_to market_places_url, notice: 'Market place was successfully destroyed.' }
+      format.html {
+ redirect_to market_places_url, notice: "Market place was successfully destroyed." }
       format.json { head :no_content }
     end
   end
