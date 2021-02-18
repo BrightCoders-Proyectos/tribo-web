@@ -7,7 +7,7 @@
   <div class="flex flex-col items-center px-4 py-2 md:px-32 lg:px-60 py-10 lg:py-14">
     <div class="content-center text-center py-4 md:w-max mt-2.5"> 
       <%= render "shared/header_stamp" %>
-      <h2 class="w-80 md:w-11/12 md:ml-12">Para continuar inicia sesión en tribo</h2>
+      <h2 class="header-2 w-80 md:w-11/12 md:ml-12">Para continuar inicia sesión en tribo</h2>
     </div>  
       
       <div class="text-field mt-8 md:w-full">
@@ -19,7 +19,7 @@
       </div>
 
       <div class="submit-field mt-8 md:w-full">
-        <%= form.submit "Inicia sesión", class: 'button btn-prim justify-center w-60 md:w-full' %>
+        <%= form.submit "Iniciar sesión", class: 'button btn-prim justify-center w-60 md:w-full' %>
       </div>
 
 
@@ -27,7 +27,7 @@
 
       <div class="other-links mt-4">
         <% if Clearance.configuration.allow_sign_up? %>
-         <p class="text-xs md:text-base">¿Aún no tienes cuenta? <%= link_to "Regístrate aquí", sign_up_path, class: 'text-tribo' %></p>
+         <p class="text-xs md:text-base mb-6">¿Aún no tienes cuenta? <%= link_to "Regístrate aquí", sign_up_path, class: 'text-tribo' %></p>
         <% end %>
         <!--
         <%= link_to t(".forgot_password"), new_password_path %>
