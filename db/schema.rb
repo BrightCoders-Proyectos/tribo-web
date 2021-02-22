@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_180454) do
+ActiveRecord::Schema.define(version: 2021_02_22_185751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,11 @@ ActiveRecord::Schema.define(version: 2021_02_01_180454) do
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
     t.string "name"
+<<<<<<< HEAD
     t.string "phone"
     t.boolean "status", default: true
+=======
+>>>>>>> 4c81a78... Remove Phone Column in Users
     t.index ["email"], name: "index_users_on_email"
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["remember_token"], name: "index_users_on_remember_token"
