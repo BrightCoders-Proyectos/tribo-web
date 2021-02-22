@@ -1,3 +1,8 @@
+<% content_for :head do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <%= javascript_pack_tag 'input' %>
+<%end%>
+
 <%= form_for :session, url: session_path do |form| %>
   <div class="flex flex-col items-center px-4 py-2 md:px-32 lg:px-60 py-10 lg:py-14">
     <div class="content-center text-center py-4 md:w-max mt-2.5"> 
@@ -6,16 +11,17 @@
     </div>  
       
       <div class="text-field mt-8 md:w-full">
-        <%= form.text_field :email, type: 'email', class: "input-field w-60 md:w-full", placeholder: "Correo electrónico" %>
+        <%= form.text_field :email, type: 'email', class: "input-field w-60 md:w-full", placeholder: "Correo electrónico", required: true  %>
       </div>
 
       <div class="password-field mt-4 md:w-full">
-        <%= form.password_field :password, class: "input-field w-60 md:w-full", placeholder: "Contraseña" %>
+        <%= form.password_field :password, class: "input-field w-60 md:w-full", placeholder: "Contraseña", required: true  %>
       </div>
 
       <div class="submit-field mt-8 md:w-full">
         <%= form.submit "Inicia sesión", class: 'button btn-prim justify-center w-60 md:w-full' %>
       </div>
+
 
       <hr class="w-60 mt-8 md:w-full">
 
