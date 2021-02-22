@@ -3,12 +3,21 @@
   <%= form.text_field :name, placeholder:t(".placeholder_name"), class: "input-field w-full" %>
 </div>
 
-<div class="password-field mb-4">
+<div class="email-field mb-4">
+  <%= form.label :email, t(".label_email"), class: "mb-1" %>
+  <%= form.email_field :email, placeholder:t(".placeholder_email"), class: "input-field w-full" %>
+</div>
+
+<div class="password-field mb-8">
   <%= form.label :password, t(".label_password"), class: "mb-1" %>
   <%= form.password_field :password, placeholder:t(".placeholder_password"), class: "input-field w-full" %>
 </div>
 
-<div class="phone-field mb-4">
-  <%= form.label :phone, t(".label_phone"), class: "mb-1" %>
-  <%= form.phone_field :phone, :maxlength => 10, placeholder:t(".placeholder_phone"), class: "input-field w-full" %>
+<div class="radio-group font-light mb-8">
+    <div class="w-full mb-4">
+      <%= radio_button_tag 'privacyPolicy', 'privacy_policy', false, class: "mr-1" %> Acepto la <%= button_tag 'Política de Privacidad', type: 'button', id: "modal-policy", class: "btn text-tribo" %>
+    </div>
+    <div class="w-full">
+      <%= radio_button_tag 'terms', 'terms_conditions', false, class: "mr-1"%> Acepto los <%= button_tag 'Términos y condiciones', type: 'button', id: "modal-policy", class: "btn text-tribo" %>
+    </div>
 </div>

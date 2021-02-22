@@ -1,18 +1,31 @@
+<% content_for :head do %>
+  <%= javascript_pack_tag 'modal' %>
+<% end %>
+
 <div id="clearance" class="px-6 py-16">
   <%= render "shared/header_stamp" %>
   
-  <h2 class="text-center mb-4"><%= t(".title") %></h2>
-  <h6 class="text-center mb-8"><%= t(".description") %></h6>
+  <h2 class="header-2 text-center mb-4"><%= t(".title") %></h2>
+  <h6 class="header-6 text-center mb-8"><%= t(".description") %></h6>
 
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit class: "button btn-prim" %>
+      <%= form.submit t(".sign_up"), id: "buttonSignUp", class: "button btn-prim mb-6 mx-auto w-9/12" %>
     </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+    <hr class="mx-auto w-9/12">
+
+    <div class="other-links mt-4">
+      <span class="small block text-center">¿Ya tienes una cuenta? <%= link_to t(".sign_in_alt"), sign_in_path, class: "text-tribo font-normal" %></span>
     </div>
   <% end %>
+
+  <%
+=begin%>
+ <%= render "shared/legal" %> 
+<%
+=end%>
+
 </div>
