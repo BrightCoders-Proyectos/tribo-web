@@ -1,19 +1,32 @@
-<div class="text-field">
-  <h5 class="header-5"><%= form.label :email %></h5>
-  <%= form.text_field :email, type: 'email', class: 'input-field' %>
+<% content_for :head do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <%= javascript_pack_tag 'input' %>
+<%end%>
+
+<div class="text-field xl:w-1/2 mb-4 md:mb-6 xl:mx-auto">
+  <%= form.label :name, t(".label_name"), class: "mb-1 md:mb-1.5" %>
+  <%= form.text_field :name, placeholder:t(".placeholder_name"), class: "input-field w-full", required: true %>
 </div>
 
-<div class="text-field">
-  <h5 class="header-5"><%= form.label :name %></h5>
-  <%= form.text_field :name, class: 'input-field' %>
+<div class="flex md:space-x-6 xl:w-1/2 mb-8 md:mb-12 xl:mx-auto">
+  <div class="email-field mb-4 md:mb-0 md:w-1/2">
+    <%= form.label :email, t(".label_email"), class: "mb-1 md:mb-1.5" %>
+    <%= form.email_field :email, placeholder:t(".placeholder_email"), class: "input-field w-full", required: true %>
+  </div>
+
+  <div class="password-field md:w-1/2">
+    <%= form.label :password, t(".label_password"), class: "mb-1 md:mb-1.5" %>
+    <%= form.password_field :password, placeholder:t(".placeholder_password"), class: "input-field w-full", required: true %>
+  </div>
 </div>
 
-<div class="text-field">
-  <h5 class="header-5"><%= form.label :phone %></h5>
-  <%= form.text_field :phone, :maxlength => 10, class: 'input-field' %>
-</div>
-
-<div class="password-field">
-  <h5 class="header-5"><%= form.label :password %></h5>
-  <%= form.password_field :password, class: 'input-field' %>
+<div class="radio-group mb-8 md:mb-12 md:text-center font-light">
+  <div class="w-full mb-4 md:mb-6 xl:mb-5">
+    <input type="checkbox" name="privacy_policy" id="privacy_policy" class="cursor-pointer" value={true} required />
+    <label >Acepto la </label><button id="modal-policy" class="btn text-tribo" type="button">Política de Privacidad</button>
+  </div>
+  <div class="w-full">
+    <input type="checkbox" name="terms_conditions" id="terms_conditions" class="cursor-pointer" value={true} required />
+    <label >Acepto los </label><button class="btn text-tribo" type="button">Términos y Condiciones</button>
+  </div>
 </div>

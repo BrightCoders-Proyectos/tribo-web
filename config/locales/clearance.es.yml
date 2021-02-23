@@ -59,5 +59,17 @@ es:
       title: Sign in
   users:
     new:
-      sign_in: Sign in
-      title: Sign up
+      sign_up: Registrarme
+      sign_in: Inicia sesión
+      sign_up_alt: Regístrate aquí
+      sign_in_alt: Inicia sesión aquí
+      title: Crea tu cuenta gratuita de tribo
+      description: Tribo te ayuda a estar más cerca de tus clientes, solo regístrate y estarás listo para venderle a los clientes de tu comunidad
+    form:
+      label_name: Nombre completo
+      placeholder_name: Escribe tu nombre completo
+      label_email: Correo electrónico
+      placeholder_email: Ingresa tu e-mail
+      label_password: Contraseña
+      placeholder_password: Crea una contraseña
+      

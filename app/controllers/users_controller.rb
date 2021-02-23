@@ -16,8 +16,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
-    redirect_to market_places_path
+    @user = User.create(user_params)
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to sign_in_path }
+      else
+        flash[:msg] = "¡El correo ingresado ya está en uso! Intenta de nuevo"
+        format.html { render :new }
+      end
+    end
   end
 
   def show
@@ -48,6 +55,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :phone, :email, :password, :status)
+      params.require(:user).permit(:name, :email, :password, :privacy_policy, :terms_conditions, :status)
     end
 end

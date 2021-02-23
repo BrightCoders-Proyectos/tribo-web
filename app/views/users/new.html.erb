@@ -1,15 +1,31 @@
-<div id="clearance" class="sign-up">
-  <h2 class="header-2"><%= t(".title") %></h2>
+<% content_for :head do %>
+  <%= javascript_pack_tag 'modal' %>
+<% end %>
+
+<div id="clearance" class="px-6 py-16 md:py-24 md:px-12 xl:py-16 xl:px-16">
+  <%= render "shared/header_stamp" %>
+  
+  <h2 class="header-2 text-center mb-4 md:mb-8"><%= t(".title") %></h2>
+  <h6 class="header-6 text-center mb-8 md:mb-12"><%= t(".description") %></h6>
+  
+  <% if flash[:msg] %>
+    <div class="border-2 rounded-lg py-3 bg-red-200 border-red-200 mb-4 pl-4 text-center"><%= flash[:msg] %></div>
+  <% end %>
 
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit t(".sign_up"), id: "buttonSignUp", class: "button btn-prim xl:w-1/4 w-9/12 mb-6 mb:mb-8 xl:mb-6 mx-auto", data: { :disable_with => "Procesando..." } %>
     </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+    <hr class="w-9/12 xl:w-1/4 mx-auto">
+
+    <div class="other-links xl:w-1/4 mt-4 md:mt-6 xl:mx-auto">
+      <span class="small block text-center">¿Ya tienes una cuenta? <%= link_to t(".sign_in_alt"), sign_in_path, class: "text-tribo font-normal" %></span>
     </div>
   <% end %>
+
+ <%= render "shared/legal" %>
+
 </div>

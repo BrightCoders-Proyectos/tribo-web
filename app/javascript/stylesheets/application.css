@@ -5,7 +5,7 @@
 @layer base {
   /* Font Sizing and weight */
   body {
-    @apply text-lg md:text-xl xl:text-2xl;
+    @apply bg-scene text-lg md:text-xl xl:text-2xl;
   }
 
   .header-1 {
@@ -68,7 +68,7 @@
 
   /* All input field styles but fail state */
   .input-field {
-    @apply py-1 px-3 md:px-4 xl:px-5 flex flex-row items-center bg-scene-input border border-scene-input rounded-full active:shadow;
+    @apply py-1 px-3 md:px-4 xl:px-5 flex flex-row items-center bg-scene-input border border-scene-input rounded-full focus:shadow;
   }
 
   /* Fail state */
