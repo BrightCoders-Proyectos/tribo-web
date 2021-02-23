@@ -1,17 +1,30 @@
-<div class="h-screen flex flex-col items-center justify-center py-16 px-6 md:py-24 md:px-12 text-center">
-  <%= image_tag("tribo-logo.svg", class: "max-w-1xs md:max-w-lg lg:w-6/12 mb-8 md:mb-24") %>
-  <h6 class="header-6 md:w-1/2 mb-8 md:mb-16">Conecta con comercios y vendedores cerca de ti que pueden enviar lo que necesitas de ellos.</h6>
+<div class="h-screen flex flex-col xl:flex-row space-x-1 py-16 px-6 md:py-24 md:px-12 xl:py-16 xl:px-16">
+  
+  <div class="flex flex-col items-center xl:items-start justify-center w-full xl:w-1/2 xl:pl-16 xl:pr-24">
+    <%= image_tag("tribo-logo.svg", class: "max-w-1xs md:max-w-lg xl:max-w-sm 2xl:max-w-lg mb-8 md:mb-24 xl:mb-16") %>
+    <h6 class="header-6 md:w-1/2 xl:w-full mb-8 md:mb-16">Conecta con comercios y vendedores cerca de ti que pueden enviar lo que necesitas de ellos.</h6>
 
-  <div class="flex flex-col items-center w-full mb-12 md:mb-32">
-    <h3 class="header-3-4 md:w-9/12 mb-3 md:mb-4">Empieza ahora mismo</h3>
-    <%# Input for FUTURE address autocomplete and redirection to main page %>
-    <input id="main-search-bar" class="input-field w-full md:w-9/12" type="search" name="search" placeholder="Escribe tu dirección" data-maps-target="field" data-action="keydown->maps#preventSubmit" >
+    <div class="flex flex-col items-center xl:items-start w-full mb-12 md:mb-32 xl:mb-0 text-center xl:text-left">
+      <h3 class="header-3-4 md:w-9/12 xl:w-full mb-3 md:mb-4 xl:mb-6">Empieza ahora mismo</h3>
+      <%# Input for FUTURE address autocomplete and redirection to main page %>
+      <input id="main-search-bar" class="input-field w-full md:w-9/12 xl:w-full" type="search" name="search" placeholder="Escribe tu dirección" data-maps-target="field" data-action="keydown->maps#preventSubmit" >
 
-    <%# Temporary link to go to main page %>
-    <%= link_to "Quiero ver negocios", market_places_path, class: "small" %>
+      <%# Temporary link to go to main page %>
+      <%= link_to "Quiero ver negocios", market_places_path, class: "small self-center" %>
+    </div>
   </div>
 
-  <h3 class="header-3-4 md:w-9/12 mb-6 md:mb-8">¿Quieres anunciar tu negocio?</h3>
-  <%= link_to "Inicia sesion", sign_up_path, class: "button btn-sec w-1/2 mb-4 md:mb-6"%>
-  <%= link_to "Registrate", sign_up_path, class: "button w-1/2 btn-prim"%>
+  <div class="flex flex-col items-center justify-center w-full xl:w-1/2 xl:pl-16 xl:pr-24 text-center">
+    <h3 class="header-3-4 md:w-9/12 xl:w-full mb-6 md:mb-8 xl:mb-12">¿Quieres anunciar tu negocio?</h3>
+    <%= link_to "Inicia sesion", sign_up_path, class: "button btn-sec w-1/2 xl:w-9/12 mb-4 md:mb-6"%>
+    <%= link_to "Registrate", sign_up_path, class: "button btn-prim w-1/2 xl:w-9/12 xl:mb-24"%>
+
+    <div class="hidden xl:flex xl:flex-col">
+      <h3 class="mb-12">Descarga la aplicación en tu teléfono celular</h3>
+        <div class="store-badges flex space-x-6">
+        <%= image_tag("google_play_placeholder.svg", class: "w-1/2 cursor-pointer") %>
+        <%= image_tag("app_store_placeholder.svg", class: "w-1/2 cursor-pointer") %>
+        </div>
+      </div>
+  </div>
 </div>
