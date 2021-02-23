@@ -2,7 +2,7 @@
   <%= javascript_pack_tag 'modal' %>
 <% end %>
 
-<div id="clearance" class="px-6 py-16 md:px-12 md:py-24">
+<div id="clearance" class="px-6 py-16 md:py-24 md:px-12 xl:py-16 xl:px-16">
   <%= render "shared/header_stamp" %>
   
   <h2 class="header-2 text-center mb-4 md:mb-8"><%= t(".title") %></h2>
@@ -16,12 +16,12 @@
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit t(".sign_up"), id: "buttonSignUp", class: "button btn-prim mb-6 mb:mb-8 mx-auto w-9/12", data: { :disable_with => "Procesando..." } %>
+      <%= form.submit t(".sign_up"), id: "buttonSignUp", class: "button btn-prim xl:w-1/4 w-9/12 mb-6 mb:mb-8 xl:mb-6 mx-auto", data: { :disable_with => "Procesando..." } %>
     </div>
 
-    <hr class="mx-auto w-9/12">
+    <hr class="w-9/12 xl:w-1/4 mx-auto">
 
-    <div class="other-links mt-4 md:mb-6">
+    <div class="other-links xl:w-1/4 mt-4 md:mt-6 xl:mx-auto">
       <span class="small block text-center">¿Ya tienes una cuenta? <%= link_to t(".sign_in_alt"), sign_in_path, class: "text-tribo font-normal" %></span>
     </div>
   <% end %>
