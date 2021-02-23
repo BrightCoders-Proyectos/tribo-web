@@ -1,30 +1,29 @@
-<div class="flex flex-col items-center px-10 md:px-32 lg:px-60 py-10 lg:py-14">
-  <h1 class="header-1 mb-7 text-primary">¡Hola!</h1>
-  <h5 class="header-5 mb-8">Te damos la bienvenida a</h5>
-  <%= image_tag("tribo-logo.svg", class: "w-10/12 md:w-8/12 lg:w-6/12 mb-12") %>
-
-  <%= form_with url: "#", class: "pb-12 w-full" do |form| %>
-    <div class="flex flex-col items-center">
-      <%= form.label :link, "Escribe tu dirección en la barra para ubicar los negocios cercanos", class: "pb-4 text-center" %>
-      <%= form.text_field :link, class: "md:w-8/12 py-2 px-6 bg-blue-50 rounded-md font-light shadow", placeholder: "Escribe una dirección" %>
-    </div>
-  <% end %>
+<div class="h-screen flex flex-col xl:flex-row space-x-1 py-16 px-6 md:py-24 md:px-12 xl:py-16 xl:px-16">
   
-  <h3 class="header-3-4 mb-6 text-complementary">#QuédateEnCasa</h3>
-  <p class="text-center mb-3">
-    Tribo es una plataforma digital que te conecta con comercios y
-    vendedores cerca de ti y que pueden enviar a domicilio lo que necesitas de ellos.
-  </p>
-  <p class="md:w-6/12 text-center mb-8">
-    Sólo llama o envía un mensaje por WhatsApp
-    y recibe tu pedido en la puerta de tu hogar
-  </p>
+  <div class="flex flex-col items-center xl:items-start justify-center w-full xl:w-1/2 xl:pl-16 xl:pr-24">
+    <%= image_tag("tribo-logo.svg", class: "max-w-1xs md:max-w-lg xl:max-w-sm 2xl:max-w-lg mb-8 md:mb-24 xl:mb-16") %>
+    <h6 class="header-6 md:w-1/2 xl:w-full mb-8 md:mb-16">Conecta con comercios y vendedores cerca de ti que pueden enviar lo que necesitas de ellos.</h6>
 
-  <a href="" class="py-2 px-4 bg-primary hover:bg-white border-2 border-primary rounded-md text-white hover:text-primary font-semibold hover:shadow">Descarga la App</a>
+    <div class="flex flex-col items-center xl:items-start w-full mb-12 md:mb-32 xl:mb-0 text-center xl:text-left">
+      <h3 class="header-3-4 md:w-9/12 xl:w-full mb-3 md:mb-4 xl:mb-6">Empieza ahora mismo</h3>
+      <%# Input for FUTURE address autocomplete and redirection to main page %>
+      <input id="main-search-bar" class="input-field w-full md:w-9/12 xl:w-full" type="search" name="search" placeholder="Escribe tu dirección" data-maps-target="field" data-action="keydown->maps#preventSubmit" >
+      <%# Temporary link to go to main page %>
+      <%= link_to "Quiero ver negocios", market_places_path, class: "small self-center" %>
+    </div>
+  </div>
 
-  <div class="mt-10 text-center">
-    <span class="mb-2 text-xs lg:text-base">Made with love in Colima, México</span>
-    <br>
-    <span class="text-complementary text-xs lg:text-base">#WeAreMagma</span>
+  <div class="flex flex-col items-center justify-center w-full xl:w-1/2 xl:pl-16 xl:pr-24 text-center">
+    <h3 class="header-3-4 md:w-9/12 xl:w-full mb-6 md:mb-8 xl:mb-12">¿Quieres anunciar tu negocio?</h3>
+    <%= link_to "Inicia sesion", sign_in_path, class: "button btn-sec w-1/2 xl:w-9/12 mb-4 md:mb-6"%>
+    <%= link_to "Registrate", sign_up_path, class: "button btn-prim w-1/2 xl:w-9/12 xl:mb-24"%>
+
+    <div class="hidden xl:flex xl:flex-col">
+      <h3 class="mb-12">Descarga la aplicación en tu teléfono celular</h3>
+        <div class="store-badges flex space-x-6">
+        <%= image_tag("google_play_placeholder.svg", class: "w-1/2 cursor-pointer") %>
+        <%= image_tag("app_store_placeholder.svg", class: "w-1/2 cursor-pointer") %>
+        </div>
+      </div>
   </div>
 </div>
