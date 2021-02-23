@@ -4,23 +4,25 @@
   <%= javascript_pack_tag 'input' %>
 <%end%>
 
-<div class="text-field mb-4">
-  <%= form.label :name, t(".label_name"), class: "mb-1" %>
+<div class="text-field mb-4 md:mb-6">
+  <%= form.label :name, t(".label_name"), class: "mb-1 md:mb-1.5" %>
   <%= form.text_field :name, placeholder:t(".placeholder_name"), class: "input-field w-full", required: true %>
 </div>
 
-<div class="email-field mb-4">
-  <%= form.label :email, t(".label_email"), class: "mb-1" %>
-  <%= form.email_field :email, placeholder:t(".placeholder_email"), class: "input-field w-full", required: true %>
+<div class="flex md:space-x-6 mb-8 md:mb-12">
+  <div class="email-field mb-4 md:mb-0 md:w-1/2">
+    <%= form.label :email, t(".label_email"), class: "mb-1 md:mb-1.5" %>
+    <%= form.email_field :email, placeholder:t(".placeholder_email"), class: "input-field w-full", required: true %>
+  </div>
+
+  <div class="password-field md:w-1/2">
+    <%= form.label :password, t(".label_password"), class: "mb-1 md:mb-1.5" %>
+    <%= form.password_field :password, placeholder:t(".placeholder_password"), class: "input-field w-full", required: true %>
+  </div>
 </div>
 
-<div class="password-field mb-8">
-  <%= form.label :password, t(".label_password"), class: "mb-1" %>
-  <%= form.password_field :password, placeholder:t(".placeholder_password"), class: "input-field w-full", required: true %>
-</div>
-
-<div class="radio-group font-light mb-8">
-  <div class="w-full mb-4">
+<div class="radio-group mb-8 md:mb-12 md:text-center font-light">
+  <div class="w-full mb-4 md:mb-6">
     <input type="checkbox" name="privacy_policy" id="privacy_policy" class="cursor-pointer" value={true} required />
     <label >Acepto la </label><button id="modal-policy" class="btn text-tribo" type="button">Política de Privacidad</button>
   </div>
