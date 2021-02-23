@@ -82,22 +82,22 @@
           <!-- Grid column -->
           <div class="info-store-modal-businessname">
             <!-- Column contents -->
-            <p class="info-store-modal-title text-2xl"><%= market_place.business_name %></p>
-            <p class="info-store-modal-content mb-1"><%= market_place.business_line %></p>
-            <p class="info-store-modal-content"><%= market_place.service_days %>, <%= market_place.open_hour.to_s(:time) %> a <%= market_place.close_hour.to_s(:time) %></p>
+            <p class="mb-6 info-store-modal-title text-2xl"><%= market_place.business_name %></p>
+            <p class="mb-7 info-store-modal-content"><%= market_place.business_line %></p>
+            <p class="mb-6 info-store-modal-content"><%= market_place.service_days %>, <%= market_place.open_hour.to_s(:time) %> a <%= market_place.close_hour.to_s(:time) %></p>
           </div>
         </div>
         <div class="ml-4 mr-4 md:ml-12  md:mr-12 md:ml-12  md:mr-12">
-          <p class="info-store-modal-title">Dirección:</p>
-          <p class="info-store-modal-content"><%= market_place.address %>, <%= market_place.district %>, <%= market_place.postcode %></p>
-          <p class="info-store-modal-title">Tipo(s) de entrega:</p>
-          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex lg:mr-3 md:mr-3"><%= image_tag 'pickup_products.svg', class: 'mr-1.5' %> Recoger producto </p>
-          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex"><%= image_tag 'send_products.svg', class: 'mr-1.5' %> Recibir producto </p>
-          <p class="info-store-modal-title">Acepta pagos con:</p>
-          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex lg:mr-3 md:mr-3"><%= image_tag 'cash.svg', class: 'mr-1.5' %> Efectivo </p>
-          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex"><%= image_tag 'credit_card.svg', class: 'mr-1.5' %> Tarjeta de débito/crédito </p>
-          <p class="info-store-modal-title">Teléfono:</p>
-          <p class="info-store-modal-content"><%= User.find(market_place.user_id).phone %></p>
+          <p class="info-store-modal-title mb-6">Dirección:</p>
+          <p class="info-store-modal-content mb-6"><%= market_place.address %>, <%= market_place.district %>, <%= market_place.postcode %></p>
+          <p class="info-store-modal-title mb-6">Tipo(s) de entrega:</p>
+          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex lg:mr-3 md:mr-3 mb-6"><%= image_tag 'pickup_products.svg', class: 'mr-1.5' %> Recoger producto </p>
+          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex mb-6"><%= image_tag 'send_products.svg', class: 'mr-1.5' %> Recibir producto </p>
+          <p class="info-store-modal-title mb-6">Acepta pagos con:</p>
+          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex lg:mr-3 md:mr-3 mb-6"><%= image_tag 'cash.svg', class: 'mr-1.5' %> Efectivo </p>
+          <p class="info-store-modal-content flex flex-row sm:inline-flex md:inline-flex lg:inline-flex mb-6"><%= image_tag 'credit_card.svg', class: 'mr-1.5' %> Tarjeta de débito/crédito </p>
+          <p class="info-store-modal-title mb-6">Teléfono:</p>
+          <p class="info-store-modal-content mb-6"><%= User.find(market_place.user_id).phone %></p>
           <div class="info-store-modal-whatsapp">
             <a class="button btn-prim px-12" href="https://wa.me/<%= User.find(market_place.user_id).phone %>" target="_blank"><%= image_tag 'whatsapp.svg', class: 'mr-3' %> Enviar un WhatsApp</a>
           </div>

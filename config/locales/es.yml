@@ -9,7 +9,7 @@ es:
   hello: 'Hola'
   legal:
     faq:
-      title: '<h3>FAQ</h3>'
+      title: '<h3 class="header-3-4">FAQ</h3>'
       body: '<strong>¿Cómo funciona la plataforma?</strong>
       <br>
       <p>Tribo es una plataforma digital que te conecta con comercios y vendedores cerca de ti y que pueden enviar a domicilio lo que necesitas de ellos.</p>
@@ -17,7 +17,7 @@ es:
       <p>Sólo llama o envía un mensaje por WhatsApp y recibe tu pedido en la puerta de tu hogar.</p>'
 
     policy: 
-      title: '<h3>Política de Privacidad</h3>'
+      title: '<h3 class="header-3-4">Política de Privacidad</h3>'
       body: '<p>Una política de privacidad es un documento que constata qué datos personales está usted
         recogiendo de sus usuarios, por qué y cómo los mantiene usted en privado.
         </p>
@@ -44,7 +44,7 @@ es:
         </p>'
 
     recommendations:
-      title: '<h3>#QuédateEnCasa</h3>'
+      title: '<h3 class="header-3-4">#QuédateEnCasa</h3>'
       body: '<strong>Recomendaciones para el aislamiento colectivo.</strong>
       <br>
       <p>A pesar de que cada uno reaccionamos de modo distinto a situaciones estresantes, una epidemia infecciosa como el coronavirus puede generar rasgos comunes en lo que a salud mental se refiere. Las situaciones derivadas del estado de alarma implican así que las personas experimenten síntomas derivados del distanciamiento social, la cuarentena o el aislamiento, generando sensación de ansiedad, preocupación o miedo.</p>
@@ -52,7 +52,7 @@ es:
       <p>Esto viene provocado por multitud de factores, como el estado de salud propio o de otros, consecuencias laborales, incertidumbre por la situación, soledad... Para afrontar esta situación, existen una serie de consejos y recomendaciones con el objetivo de cuidar la salud mental durante la cuarentena. En sentido han trabajado expertos de la Sociedad Española de Psiquiatría (SEP), quienes han elaborado un documento sobre estas directrices. También lo han hecho desde Lundbeck con un texto elaborado por expertos de Semergen y psiquiatría.</p>'
 
     terms:
-      title: '<h3>Términos y condiciones</h3>'
+      title: '<h3 class="header-3-4">Términos y condiciones</h3>'
       body: '<p>A pesar de que cada uno reaccionamos de modo distinto a situaciones estresantes, una epidemia infecciosa como el coronavirus puede generar rasgos comunes en lo que a salud mental se refiere. Las situaciones derivadas del estado de alarma implican así que las personas experimenten síntomas derivados del distanciamiento social, la cuarentena o el aislamiento, generando sensación de ansiedad, preocupación o miedo.</p>
         <br>
       <p>Esto viene provocado por multitud de factores, como el estado de salud propio o de otros, consecuencias laborales, incertidumbre por la situación, soledad... Para afrontar esta situación, existen una serie de consejos y recomendaciones con el objetivo de cuidar la salud mental durante la cuarentena. En sentido han trabajado expertos de la Sociedad Española de Psiquiatría (SEP), quienes han elaborado un documento sobre estas directrices. También lo han hecho desde Lundbeck con un texto elaborado por expertos de Semergen y psiquiatría.</p>'
