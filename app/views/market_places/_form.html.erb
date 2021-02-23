@@ -1,7 +1,7 @@
 <%= form_with(model: market_place, local: true) do |form| %>
   <% if market_place.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(market_place.errors.count, "error") %> prohibited this market_place from being saved:</h2>
+      <h2 class="header-2"><%= pluralize(market_place.errors.count, "error") %> prohibited this market_place from being saved:</h2>
 
       <ul>
         <% market_place.errors.full_messages.each do |message| %>
