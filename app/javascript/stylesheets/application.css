@@ -18,7 +18,8 @@
 
   h3,
   h4 {
-    @apply text-3xl md:text-4xl 2xl:text-5xl font-bold mb-8 !important;
+    @apply text-3xl md:text-4xl 2xl:text-5xl font-bold !important;
+    @apply mb-8;
   }
 
   h5,
@@ -53,7 +54,7 @@
 
   /* All button styles but colors and hovers */
   .button {
-    @apply py-1 px-4 md:py-1.5 md:px-5 xl:px-6 flex flex-row justify-items-center items-center border-2 rounded-full shadow-md font-medium text-scene cursor-pointer;
+    @apply py-1 px-4 md:py-1.5 md:px-5 xl:px-6 flex flex-row justify-center items-center border-2 rounded-full shadow-md font-medium text-scene cursor-pointer;
   }
 
   /* Colors and hovers for primary button */
