@@ -7,12 +7,16 @@
   
   <h2 class="header-2 text-center mb-4"><%= t(".title") %></h2>
   <h6 class="header-6 text-center mb-8"><%= t(".description") %></h6>
+  
+  <% if flash[:msg] %>
+    <div class="border-2 rounded-lg py-3 bg-red-200 border-red-200 mb-4 pl-4 text-center"><%= flash[:msg] %></div>
+  <% end %>
 
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit t(".sign_up"), id: "buttonSignUp", class: "button btn-prim mb-6 mx-auto w-9/12" %>
+      <%= form.submit t(".sign_up"), id: "buttonSignUp", class: "button btn-prim mb-6 mx-auto w-9/12", data: { :disable_with => "Procesando..." } %>
     </div>
 
     <hr class="mx-auto w-9/12">
@@ -22,10 +26,6 @@
     </div>
   <% end %>
 
-  <%
-=begin%>
- <%= render "shared/legal" %> 
-<%
-=end%>
+ <%= render "shared/legal" %>
 
 </div>

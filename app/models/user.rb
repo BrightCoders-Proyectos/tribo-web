@@ -5,4 +5,5 @@ class User < ApplicationRecord
 
   has_many :market_places
   validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
 end

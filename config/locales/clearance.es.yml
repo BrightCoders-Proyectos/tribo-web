@@ -59,7 +59,7 @@ es:
       title: Sign in
   users:
     new:
-      sign_up: Resgistrarme
+      sign_up: Registrarme
       sign_in: Inicia sesión
       sign_up_alt: Regístrate aquí
       sign_in_alt: Inicia sesión aquí
