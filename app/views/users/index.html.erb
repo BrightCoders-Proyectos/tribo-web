@@ -6,73 +6,73 @@
 <div class="px-6 y py-2">
   <div class="text-justify py-4 mt-2.5">
     <%= render "shared/header_stamp" %>
-    <h3>Mi cuenta</h3>
+    <h3 class="header-3-4">Mi cuenta</h3>
   </div>
 
   <div class="grid lg:grid-cols-2 md:grid-cols-1 mt-2.5">
     <div clas="lg:col-start-1 lg:col-end-2">
-      <h5>Nombre completo</h5>
-      <p><%= current_user.name %></p>
+      <h5 class="header-5">Nombre completo</h5>
+      <p class="mb-6"><%= current_user.name %></p>
     </div>
 
     <div clas="col-start-2 col-end-3">
-      <h5>Correo electrónico</h5>
-      <p><%= current_user.email %></p>
+      <h5 class="header-5">Correo electrónico</h5>
+      <p class="mb-6"><%= current_user.email %></p>
     </div>
   </div>
 
   <div class="text-justify py-4 mt-2.5">
-    <h3>Mis negocios</h3>
+    <h3 class="header-3-4">Mis negocios</h3>
   </div>
   
   <hr class="w-full border-scene-neutral">
 
        
   <% @user_market.each do |market| %>
-    <h5 class="mt-6">Nombre</h5>
-    <p><%= market.business_name %></p>
+    <h5 class="header-5 mt-6">Nombre</h5>
+    <p class="mb-6"><%= market.business_name %></p>
       
     <div class="grid lg:grid-cols-2 md:grid-cols-1 mt-4">
       <div clas="lg:col-start-1 lg:col-end-2">
-        <h5>Direccion</h5>
-        <p><%= market.address %></p>
+        <h5 class="header-5">Direccion</h5>
+        <p class="mb-6"><%= market.address %></p>
       </div>
 
       <div clas="col-start-2 col-end-3">
-        <h5>Teléfono:</h5>
-        <p><%= current_user.phone %></p>
+        <h5 class="header-5">Teléfono:</h5>
+        <p class="mb-6"><%= current_user.phone %></p>
       </div>
     </div>
 
     <div class="grid lg:grid-cols-2 lg:grid-rows-4 md:grid-cols-1">
       <div class="mt-4">
-        <h5>Giro</h5>
-        <p><%= market.business_line%></p>
+        <h5 class="header-5">Giro</h5>
+        <p class="mb-6"><%= market.business_line%></p>
       </div>
       
       <div class="mt-4">
-        <h5>Vendiendo</h5>
-        <p><%= market.selling %></p>
+        <h5 class="header-5">Vendiendo</h5>
+        <p class="mb-6"><%= market.selling %></p>
       </div>
 
       <div class="mt-4">
-        <h5>Forma(s) de pago</h5>
-        <p><%= market.payment %></p>
+        <h5 class="header-5">Forma(s) de pago</h5>
+        <p class="mb-6"><%= market.payment %></p>
       </div>
       
       <div class="mt-4">
-        <h5>Tipo(s) de entrega</h5>
-        <p><%= market.pickup_type%></p>
+        <h5 class="header-5">Tipo(s) de entrega</h5>
+        <p class="mb-6"><%= market.pickup_type%></p>
       </div>
 
       <div class="mt-4">
-        <h5>Servicio a domicilio</h5>
-        <p><%= market.service_days %></p>
+        <h5 class="header-5">Servicio a domicilio</h5>
+        <p class="mb-6"><%= market.service_days %></p>
       </div>
       
       <div class="mt-4">
-        <h5>Horario</h5>
-        <p><%= market.open_hour.strftime('%H:%M') %> a <%= market.close_hour.strftime('%H:%M') %></p>
+        <h5 class="header-5">Horario</h5>
+        <p class="mb-6"><%= market.open_hour.strftime('%H:%M') %> a <%= market.close_hour.strftime('%H:%M') %></p>
       </div>
     </div >
 
@@ -84,8 +84,8 @@
     <div id='delete-confirmation-bussines-<%= market.id %>' class='modal-full fixed bg-transparent hidden'>
       <div class='modal-content text-center'>
       <div class='modal-text'>
-        <h3 class='text-center'>Eliminar tu negocio</h3>
-        <p class='text-center mb-12'>¿Estás seguro que quieres eliminar tu negocio <%= market.business_name %>?</p>
+        <h3 class='header-3-4 text-center'>Eliminar tu negocio</h3>
+        <p class='text-center mb-18'>¿Estás seguro que quieres eliminar tu negocio <%= market.business_name %>?</p>
         <div class="flex flex-row justify-center items-center space-x-4">
         <%= button_to 'Confirmar', market_place_path(market.id), method: :delete, class: 'button btn-prim md:px-20 lg:px-20' %>
           <a href="#" data-dismiss="modal" class="cancel button btn-neutral md:px-20 lg:px-20">Cancelar</a>
@@ -114,8 +114,8 @@
 <div id='delete-confirmation-user' class='modal-full fixed bg-transparent hidden'>
   <div class='modal-content text-center'>
     <div class='modal-text'>
-      <h3 class='text-center'>Eliminar tu cuenta</h3>
-      <p class='text-center mb-12'>¿Estás seguro que quieres eliminar tu cuenta?</p>
+      <h3 class='header-3-4 text-center'>Eliminar tu cuenta</h3>
+      <p class='text-center mb-18'>¿Estás seguro que quieres eliminar tu cuenta?</p>
       <div class='flex flex-row justify-center items-center space-x-4'>
       <%= button_to 'Confirmar', deactivate_user_path(current_user.id), method: :patch, class: 'button btn-prim md:px-20 lg:px-20' %>
       <a href="#" data-dismiss="modal" class="cancel button btn-neutral md:px-20 lg:px-20">Cancelar</a>
@@ -129,7 +129,7 @@
   <div class="px-6 y py-2">
     <div class="text-justify py-4 mt-2.5">
       <%= render "shared/header_stamp" %>
-      <h3>Oops algo salió mal</h3>
+      <h3 class="header-3-4">Oops algo salió mal</h3>
     </div>
     <%= button_to 'Volver', market_places_path, method: 'get', class: 'button btn-prim mt-4 w-80 justify-center' %>
   </div>

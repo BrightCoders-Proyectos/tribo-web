@@ -1,7 +1,7 @@
 <div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+  <h2 class="header-2"><%= t(".title") %></h2>
 
-  <p><%= t(".description") %></p>
+  <p class="mb-6"><%= t(".description") %></p>
 
   <%= form_for :password_reset,
     url: user_password_path(current_user, token: current_user.confirmation_token),
